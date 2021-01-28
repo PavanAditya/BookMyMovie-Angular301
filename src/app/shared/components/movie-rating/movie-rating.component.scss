@@ -1,0 +1,26 @@
+.rating {
+  color: gold;
+}
+
+.rate-display {
+  font-size: 26px;
+  background: #d98e04d2;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.grey {
+  font-size: 26px;
+  background: #1b1b1b3b;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rate-display.last {
+  background: linear-gradient(to right, #d98e04d2 0%, #d98e04d2 55%, #1b1b1b3b 56%, #1b1b1b3b 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

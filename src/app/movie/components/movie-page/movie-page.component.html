@@ -8,12 +8,7 @@
       <app-movie-description [overview]="movieDescription.overview" [title]="movieDescription.title">
       </app-movie-description>
       <h3>Social</h3>
-      <div fxLayout="row" class="rating">
-        <div *ngFor="let star of rating">
-          <mat-icon *ngIf="star">star_rate</mat-icon>
-          <mat-icon *ngIf="!star">star_border</mat-icon>
-        </div>
-      </div>
+      <app-movie-rating [movieDescription]="movieDescription"></app-movie-rating>
     </div>
     <div fxLayout="column" class="rightCol" fxLayoutGap="5%">
       <iframe

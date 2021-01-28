@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Inject, Input, OnChanges, ViewEncapsulation } from '@angular/core';
 import { StoreFeatureModule } from '@ngrx/store';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { SeatReservationModalComponent } from '../../../shared/components/modals/seat-reservation-modal/seat-reservation-modal.component';
@@ -12,7 +12,8 @@ import { PreBookingComponent } from '../../../shared/components/modals/pre-booki
 @Component({
   selector: 'app-movie-page',
   templateUrl: './movie-page.component.html',
-  styleUrls: ['./movie-page.component.scss']
+  styleUrls: ['./movie-page.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class MoviePageComponent implements OnInit, OnChanges {
   imagesPath = TMDB_URLS.IMAGE_URL;
@@ -26,12 +27,8 @@ export class MoviePageComponent implements OnInit, OnChanges {
   selectedTheater;
   selectedDate;
   dialogResult;
-  rating = new Array(5);
   selectedTime;
   constructor(public dialog: MatDialog) {
-    for (let i = 0; i <= 4; i++) {
-      this.rating[i] = i <= 3 ? true : false;
-    }
     this.selectTheater = new FormControl();
   }
 
@@ -48,7 +45,6 @@ export class MoviePageComponent implements OnInit, OnChanges {
     this.date.valueChanges.subscribe((value: Date) => {
       this.selectedDate = value.toJSON();
     });
-    console.log(this.movieDescription);
   }
   checKToDialog() {
     this.category === 'nowPlaying' ? this.openDialog() : this.preBookDialog();

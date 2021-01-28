@@ -32,21 +32,46 @@
           "movieId": "",
           "rating": ""
         }
+      },
+      {
+        "uid": "103390995664490757194",
+        "name": "MSP ADITYA",
+        "image": "https://lh3.googleusercontent.com/a-/AOh14GgBPwU8UGoz0AwKHJrgHiBQrWLm0psbp0hYPoa9=s96-c",
+        "email": "msp.aditya99@gmail.com",
+        "role": "Admin",
+        "preferences": {
+          "lang": "en",
+          "generes": "12",
+          "theaters": "Sarat"
+        },
+        "ratings": {
+          "movieId": "",
+          "rating": ""
+        }
       }
     ]
   },
-  "theater": {
-    "theaters": [
-      {
-        "tid": "1",
-        "name": "Kapali",
-        "city": "Bangalore",
-        "gLocation": "test",
-        "capacity": 50,
-        "movies": [
-          474350
-        ]
-      }
-    ]
-  }
+  "theater": [
+    {
+      "tid": "1",
+      "name": "Kapali",
+      "city": "Bangalore",
+      "gLocation": "test",
+      "capacity": 50,
+      "movies": [
+        210577
+      ]
+    },
+    {
+      "tid": "13",
+      "name": "Varun Inox",
+      "city": "Vizag",
+      "gLocation": "test",
+      "capacity": 60,
+      "movies": [
+        210577,
+        11324
+      ]
+    }
+  ]
 }

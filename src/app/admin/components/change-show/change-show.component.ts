@@ -17,6 +17,7 @@ export class ChangeShowComponent implements OnInit {
   selectedTheater;
   nowShowing = [];
   nowPlaying = [];
+  movieInList = false;
   @ViewChild('successDialog') successDialog: TemplateRef<any>;
 
   constructor(private adminService: AdminService, private matDialog: MatDialog) {
@@ -38,12 +39,27 @@ export class ChangeShowComponent implements OnInit {
     });
   }
   addMovie(movie) {
-    this.nowShowing.push(movie.name);
-    this.nowPlaying.push(movie.id);
+    this.movieInList = false;
+    console.log(this.theaterList.find(el => el.tid === this.selectTheater.value.tid), 'find');
+    if (this.theaterList.find(el => el.tid === this.selectTheater.value.tid)) {
+      const movies = this.theaterList.find(el => el.tid === this.selectTheater.value.tid).movies;
+      this.nowPlaying = movies ? movies : [];
+    }
+    if (this.nowPlaying.indexOf(movie.id) === -1) {
+      this.nowShowing.push(movie.name);
+      this.nowPlaying.push(movie.id);
+    } else {
+      this.movieInList = true;
+    }
   }
   save() {
     this.matDialog.open(this.successDialog);
-    this.adminService.saveNowPlaying(this.nowPlaying, this.selectTheater['tid']);
+    this.theaterList.forEach(theater => {
+      if (theater.tid === this.selectTheater.value.tid) {
+        theater.movies = this.nowPlaying;
+      }
+    });
+    this.adminService.saveNowPlaying(this.theaterList);
   }
   cancel() {
     this.nowShowing = [];

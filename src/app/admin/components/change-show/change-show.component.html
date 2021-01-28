@@ -11,6 +11,7 @@
       <input matInput placeholder="Enter Movie Name" type="text" [formControl]="movieInput">
     </mat-form-field>
   </div>
+  <mat-error *ngIf="movieInList">This Movie is Already Playing in the selected theatre. Try another.</mat-error>
   <h4 *ngIf="nowShowing.length > 0">Now Playing in {{selectedTheater.name}}</h4>
   <div *ngIf="nowShowing.length > 0" fxLayout="row" fxLayoutGap="3%">
     <button mat-raised-button *ngFor="let movies of nowShowing">

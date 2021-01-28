@@ -29,10 +29,17 @@
   color: gold;
 }
 
-// .imageContainer{
-//     width: 20%;
-//     height: 60%;
-// }
+.rate-display.grey {
+  background-color: #fafafafa !important;
+}
+
+.rate-display.last {
+  background: linear-gradient(to right, #d98e04d2 0%, #d98e04d2 55%, #fafafafa 56%, #fafafafa 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
 .secondRow {
   align-self: center;
   height: 20%;

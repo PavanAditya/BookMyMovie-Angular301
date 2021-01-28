@@ -46,6 +46,9 @@
     </app-movie-booking>
   </mat-card-content>
   <mat-card-actions class="card-bookbutton-div">
+    <p fxLayoutAlign="center start">
+      <app-movie-rating [movieDescription]="movie"></app-movie-rating>
+    </p>
     <button mat-raised-button color="primary" (click)="checKToDialog()" [disabled]="isInvalid()">
       {{ category === 'nowPlaying' ? 'BOOK' : 'PRE-BOOK' }}
     </button>

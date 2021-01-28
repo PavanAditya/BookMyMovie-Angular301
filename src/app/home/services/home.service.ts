@@ -86,6 +86,7 @@ export class HomeService {
   getTheaterList() {
     this.http.get(environment.JSONSERVER + JSON_SERVER_URLS.THEATER_URL).subscribe(res => {
       this.store.dispatch(new SetTheaters(res['theaters']));
+      console.log(res);
     });
   }
 

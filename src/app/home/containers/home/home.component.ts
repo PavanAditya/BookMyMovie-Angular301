@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit {
         this.upcomingMoviesList = result;
       });
     this.store.select(MovieState.theaterList).subscribe(result => {
+      console.log(result, 'result list');
       this.theaterList = Object.values(result);
     });
     this.userStore.select(UserState.userSelector).subscribe(result => {

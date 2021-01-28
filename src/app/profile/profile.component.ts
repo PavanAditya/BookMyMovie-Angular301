@@ -31,6 +31,7 @@ export class ProfileComponent implements OnInit {
     { name: 'Kannada', value: 'kn' }
   ];
 
+  currentSession;
   newPreference = this.fb.group({
     lang: ['', Validators.required],
     generes: ['', Validators.required],
@@ -54,18 +55,25 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.currentSession = JSON.parse(sessionStorage.getItem('authDetails'));
     this.store.select(UserState.userSelector).subscribe(result => {
       this.userDetails = result;
+      this.sucess();
     });
     this.genresList = this.homeService.getGenres();
+    console.log(this.genresList);
     this.loginService.getUserData().subscribe(data => (this.name = data.users[0].name));
     this.store.select(MovieState.theaterList).subscribe(result => {
       this.theaterList = Object.values(result);
-      console.log('updated', result, this.theaterList);
     });
   }
   sucess() {
     this.newPreference.reset();
+    this.newPreference.patchValue({
+      lang: this.userDetails.preference.language,
+      generes: this.userDetails.preference.genre,
+      theaters: this.userDetails.preference.theater
+    });
     this.matDialog.closeAll();
   }
 }
