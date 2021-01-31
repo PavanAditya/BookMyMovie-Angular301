@@ -1,9 +1,13 @@
 <div class="search-filter-dropdowns" fxLayout="{{layout}}" fxLayoutGap="2%" fxLayoutAlign="center">
   <mat-form-field>
     <mat-label *ngIf="!languageSelected">Language</mat-label>
-    <mat-select [formControl]="languageSelector">
-      <mat-option *ngFor="let language of languageList" value="{{language.id}}">{{language.name}}</mat-option>
-    </mat-select>
+    <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="languageSelector"
+      [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayLanguage">
+      <mat-option *ngFor="let language of filteredLanguages | async" [value]="language">
+        {{language.english_name}}
+      </mat-option>
+    </mat-autocomplete>
   </mat-form-field>
   <mat-form-field>
     <mat-label *ngIf="!genreSelected">Genre</mat-label>

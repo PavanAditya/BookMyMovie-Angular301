@@ -1,0 +1,31 @@
+<div class="bookings" fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center start">
+  <h1 fxFlex="100" fxLayoutAlign="center start">My Bookings</h1>
+  <div fxLayout="row wrap" fxFlex="80" *ngIf="userBookings[0]" fxLayoutAlign="center start">
+    <mat-card fxFlex="48" *ngFor="let booking of userBookings">
+      <mat-card-content fxLayout="row wrap">
+        <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center start">
+          <div fxFlex="40" fxLayoutAlign="end start"><span>Booking Id:</span></div>
+          <div fxFlex="58" fxLayoutAlign="start start" fxFlexOffset="1"><span>{{booking.bookingId}}</span></div>
+          <div fxFlex="40" fxLayoutAlign="end start"><span>Movie Name:</span></div>
+          <div fxFlex="58" fxLayoutAlign="start start" fxFlexOffset="1"><span>{{booking.mname}}</span></div>
+          <div fxFlex="40" fxLayoutAlign="end start"><span>Theatre Name:</span></div>
+          <div fxFlex="58" fxLayoutAlign="start start" fxFlexOffset="1">
+            <span>{{booking.tname + ', ' + booking.tcity}}</span>
+          </div>
+          <div fxFlex="40" fxLayoutAlign="end start"><span>Show time:</span></div>
+          <div fxFlex="58" fxLayoutAlign="start start" fxFlexOffset="1"><span>{{booking.mtime}}</span></div>
+          <div fxFlex="40" fxLayoutAlign="end start"><span>Seat Numbers:</span></div>
+          <div fxFlex="58" fxLayoutAlign="start start" fxFlexOffset="1"><span>{{booking.seatNum}}</span></div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div fxFlex="80" *ngIf="!userBookings[0]">
+    <mat-card fxFlex="100">
+      <mat-card-content fxLayoutAlign="center start">
+        <h3>No Bookings found on your name yet.</h3>
+        <p></p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

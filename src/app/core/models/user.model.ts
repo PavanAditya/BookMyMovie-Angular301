@@ -1,5 +1,6 @@
 import { Preferences } from 'src/app/core/models/preference.model';
 import { Ratings } from 'src/app/core/models/rating.model';
+import { Bookings } from './Bookings.model';
 
 export interface User {
     id: string;
@@ -8,6 +9,7 @@ export interface User {
     image: string;
     token: string;
     role: string;
-    preference: Preferences;
+    preferences: Preferences;
     rating: Ratings;
+    bookings: Bookings[];
 }

@@ -4,36 +4,50 @@ import { MaterialModule } from '../../../material.module';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ConfirmationModalComponent } from '../../components/modals/confirmation-modal/confirmation-modal.component';
 import { ActivatedRoute } from '@angular/router';
+import * as UserState from '../../../reducers/index';
+import { Store } from '@ngrx/store';
+import { HomeService } from 'src/app/home/services/home.service';
+
 @Component({
   selector: 'app-payment-booking',
   templateUrl: './payment-booking.component.html',
   styleUrls: ['./payment-booking.component.scss']
 })
 export class PaymentBookingComponent implements OnInit {
-  firstParam;
-  secondParam;
-  thirdParam;
-  fourthParam;
-  fiveParam;
-  constructor(public dialog: MatDialog, private route: ActivatedRoute) {
-    this.firstParam = this.route.snapshot.params.movieTitle;
-    this.secondParam = this.route.snapshot.params.theatre;
-    this.thirdParam = this.route.snapshot.params.time;
-    this.fourthParam = this.route.snapshot.params.seat;
-    this.fiveParam = this.route.snapshot.params.total;
+  bookingDetails;
+  currentUserDets;
+
+  constructor(
+    public dialog: MatDialog,
+    private route: ActivatedRoute,
+    private store: Store<UserState.State>,
+    private homeService: HomeService
+  ) {
+    this.bookingDetails = JSON.parse(this.route.snapshot.params.bookingDetails);
+    console.log(this.bookingDetails, 'gn');
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.currentUserDets = JSON.parse(sessionStorage.getItem('authDetails'));
+  }
+
+  confirmPay(): void {
+    this.homeService.addBooking(this.bookingDetails, this.currentUserDets[`id`]);
+    this.openConfirmDialog();
+  }
+
   openConfirmDialog() {
-    const dialogRef = this.dialog.open(ConfirmationModalComponent, {
+    this.dialog.open(ConfirmationModalComponent, {
       disableClose: true,
       data: {
-        name: this.firstParam, theater: this.secondParam,
-        time: this.thirdParam, seat: this.fourthParam, total: this.fiveParam
+        id: this.bookingDetails.bookingId,
+        name: this.bookingDetails.mname,
+        theater: this.bookingDetails.tname,
+        time: this.bookingDetails.mtime,
+        seat: this.bookingDetails.seatNum,
+        total: this.bookingDetails.price,
       }
     });
-    // dialogRef.afterClosed().subscribe(result => {
-    // });
   }
 }
 

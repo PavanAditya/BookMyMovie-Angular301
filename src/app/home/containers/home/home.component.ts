@@ -29,11 +29,10 @@ export class HomeComponent implements OnInit {
         this.upcomingMoviesList = result;
       });
     this.store.select(MovieState.theaterList).subscribe(result => {
-      console.log(result, 'result list');
       this.theaterList = Object.values(result);
     });
     this.userStore.select(UserState.userSelector).subscribe(result => {
-      this.userPreference = result.preference;
+      this.userPreference = result.preferences;
     });
     this.genresList = this.homeService.getGenres();
   }

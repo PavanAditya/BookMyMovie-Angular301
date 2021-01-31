@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private store: Store<UserState.State>,
     private uiService: UiService
-  ) {}
+  ) { }
   authFlag = false;
   userID: string;
   signUpFlag = false;
@@ -56,15 +56,16 @@ export class HeaderComponent implements OnInit {
                 image: userData.image,
                 token: userData.token,
                 role: user.role,
-                preference: {
-                  language: user.preferences.lang,
-                  genre: user.preferences.generes,
-                  theater: user.preferences.theaters
+                preferences: {
+                  lang: user.preferences.lang,
+                  generes: user.preferences.generes,
+                  theaters: user.preferences.theaters
                 },
                 rating: {
                   movieId: user.ratings.movieId,
                   rating: user.ratings.rating
-                }
+                },
+                bookings: user.bookings
               };
               sessionStorage.setItem('authDetails', JSON.stringify(userDetails));
               this.store.dispatch(new SetUser(userDetails));
@@ -100,6 +101,10 @@ export class HeaderComponent implements OnInit {
 
   public loadProfile() {
     this.router.navigate(['/profile']);
+  }
+
+  loadBookings() {
+    this.router.navigate(['/bookings']);
   }
 
   public validate() {

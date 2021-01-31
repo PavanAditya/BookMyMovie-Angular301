@@ -8,11 +8,21 @@
 
   <div class="add-preference-dropdown">
     <form fxLayout="row wrap" fxLayoutAlign="center center" [formGroup]="newPreference">
-      <mat-form-field>
+      <!-- <mat-form-field>
         <mat-label>Language</mat-label>
         <mat-select matNativeControl formControlName="lang">
-          <mat-option *ngFor="let language of languageList" value="{{language.value}}">{{language.name}}</mat-option>
+          <mat-option *ngFor="let language of languageList" value="{{language.iso_639_1}}">{{language.english_name}}</mat-option>
         </mat-select>
+      </mat-form-field> -->
+      <mat-form-field>
+        <mat-label>Language</mat-label>
+        <input type="text" placeholder="Pick one" aria-label="Number" matInput formControlName="lang"
+          [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayLanguage">
+          <mat-option *ngFor="let language of filteredLanguages | async" [value]="language">
+            {{language.english_name}}
+          </mat-option>
+        </mat-autocomplete>
       </mat-form-field>
 
       <mat-form-field>

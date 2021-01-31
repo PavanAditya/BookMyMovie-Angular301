@@ -1,6 +1,10 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy, ViewChild, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 import { HomeService } from '../../services/home.service';
+import { MovieListService } from 'src/app/core/movie/movie-list.service';
+import * as MovieState from '../../../reducers/index';
+import { Store } from '@ngrx/store';
+import { Language } from '../../models/languages.model';
 
 @Component({
   selector: 'app-home-page',
@@ -35,10 +39,14 @@ export class HomePageComponent implements OnInit {
   upcomingMoviesFetchedPageNum = 0;
   selectedLanguage = '';
   selectedGenre = '';
-  languageList = [{id: 'en', name: 'English'}, {id: 'ja', name: 'Japanese'}, {id: 'zh', name: 'Chinese'}];
-  constructor(private homeService: HomeService) { }
+  languageList: Language[];
+  constructor(private homeService: HomeService, private store: Store<MovieState.State>) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.store.select(MovieState.languageList).subscribe(result => {
+      this.languageList = result as Language[];
+    });
+  }
 
   trackMovie(index, movie) {
     if (movie) {

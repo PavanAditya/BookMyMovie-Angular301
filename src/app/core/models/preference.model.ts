@@ -1,5 +1,5 @@
 export interface Preferences {
-    language: string;
-    genre: number[];
-    theater: string[];
+    lang: string;
+    generes: number[];
+    theaters: string[];
 }

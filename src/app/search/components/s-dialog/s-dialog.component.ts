@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
 import { MovieListService } from '../../../core/movie/movie-list.service';
-import {} from '../../../home/store/actions/home.action';
+import { } from '../../../home/store/actions/home.action';
 import { HomeService } from '../../../home/services/home.service';
 import { SegregateMovieService } from '../../services/segregate-movie.service';
 import { SearchApiService } from '../../services/search-api.service';
@@ -45,14 +45,18 @@ export class SDialogComponent implements OnInit, OnDestroy {
     private movieListService: MovieListService,
     private segregateMovies: SegregateMovieService,
     private searchService: SearchApiService
-  ) {}
+  ) { }
 
   ngOnInit() {
     // movie from store
     this.store.select(MovieState.nowPlayingMoviesSelector).subscribe(result => {
       this.originalMovieList = result;
       this.moviesList = result;
-      this.movieObjArray = this.movieListService.getLanguageList(this.moviesList); // get movies with languages
+      this.movieListService.getLanguageList();
+      this.store.select(MovieState.theaterList).subscribe(resp => {
+        this.movieObjArray = resp;
+      });
+      // get movies with languages
       // console.log(this.movieObjArray);
       // this.movieObjArray = this.segregateMovies.getSortedbyLanguage(this.languageList, this.moviesList);
     });
@@ -65,12 +69,19 @@ export class SDialogComponent implements OnInit, OnDestroy {
       this.searchService.getMovies(searchString).subscribe(
         searchList => {
           this.moviesList = searchList.results;
-          this.movieObjArray = this.movieListService.getLanguageList(this.moviesList);
+          this.movieListService.getLanguageList();
+          this.store.select(MovieState.theaterList).subscribe(resp => {
+            this.movieObjArray = resp;
+          });
           // this.movieObjArray = this.segregateMovies.getSortedbyLanguage(this.languageList, this.moviesList);
         },
         error => {
           this.moviesList = this.searchService.searchMovieFromStore(this.originalMovieList, searchString);
-          this.movieObjArray = this.movieListService.getLanguageList(this.moviesList); // get Languages
+          this.movieListService.getLanguageList();
+          this.store.select(MovieState.theaterList).subscribe(resp => {
+            this.movieObjArray = resp;
+          });
+          // get Languages
           // console.log('error', this.movieObjArray);
           // this.movieObjArray = this.segregateMovies.getSortedbyLanguage(this.languageList, this.moviesList);
         }

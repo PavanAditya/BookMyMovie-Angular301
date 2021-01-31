@@ -17,6 +17,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AdminModule } from './admin/admin.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedModule } from './shared/shared.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [AppComponent, ProfileComponent],
@@ -40,7 +41,8 @@ import { SharedModule } from './shared/shared.module';
     MaterialModule,
     CoreModule,
     AdminModule,
-    SharedModule
+    SharedModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

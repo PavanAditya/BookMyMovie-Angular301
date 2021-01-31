@@ -16,16 +16,27 @@ export const initialUserState: UserState = {
         image: '',
         token: '',
         role: '',
-        preference: {
-            language: '',
-            genre: [],
-            theater: [],
+        preferences: {
+            lang: '',
+            generes: [],
+            theaters: [],
         },
         rating: {
             movieId: '',
             rating: ''
-        }
-
+        },
+        bookings: [
+            {
+                bookingId: '',
+                tid: '',
+                tcity: '',
+                tname: '',
+                mname: '',
+                mtime: '',
+                seatNum: '',
+                price: 0
+            }
+        ]
     }
 };
 
@@ -35,6 +46,7 @@ export function userReducer(state = initialUserState, action: UserDetailsActionT
         case UserLogged.SET_USER: {
             let newUserState = { ...state.user };
             newUserState = action.payload;
+            sessionStorage.setItem('authDetails', JSON.stringify(newUserState));
             return {
                 ...state,
                 user: newUserState

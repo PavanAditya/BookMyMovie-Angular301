@@ -62,14 +62,12 @@ export class HomeService {
   }
 
   getGenres() {
-    console.log('geners', this.genres);
-    return this.genres;
+    return this.http.get(this.genresUrl);
   }
 
   fetchGenres() {
     this.http.get(this.genresUrl).subscribe(res => {
       this.genres = res['genres'];
-      console.log(res, this.genres);
     });
   }
   getCastAndCrew(movies: Movie[]) {
@@ -104,6 +102,24 @@ export class HomeService {
           user.preferences = newPreference;
           currentUserData = user;
           console.log(user);
+        }
+      });
+      this.http.put(environment.JSONSERVER + JSON_SERVER_URLS.USER_DETAILS, objectRef).subscribe(resp => {
+        console.log(resp);
+        this.store.dispatch(new SetUser(currentUserData));
+      });
+    });
+  }
+
+  addBooking(newBooking, currentUserId) {
+    let objectRef, currentUserData;
+    this.http.get(environment.JSONSERVER + JSON_SERVER_URLS.USER_DETAILS).subscribe(res => {
+      objectRef = res;
+      console.log(newBooking, currentUserId, res['users']);
+      res['users'].forEach(user => {
+        if (user.uid === currentUserId) {
+          user.bookings = user.bookings ? [...user.bookings, newBooking] : [newBooking];
+          currentUserData = user;
         }
       });
       this.http.put(environment.JSONSERVER + JSON_SERVER_URLS.USER_DETAILS, objectRef).subscribe(resp => {

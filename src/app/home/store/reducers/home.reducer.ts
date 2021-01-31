@@ -2,16 +2,19 @@ import { MovieActionTypes, EMovieActionTypes } from '../actions/home.action';
 import { Movie } from '../../models/movie.model';
 import { State } from '@ngrx/store';
 import { Theater } from '../../models/theater.model';
+import { Language } from '../../models/languages.model';
 export interface MoviesState {
     nowPlayingMovies: Movie[];
     upcomingMovies: Movie[];
     setTheaters: Theater[];
+    languages: Language[];
 }
 
 export const initialMovieState: MoviesState = {
     nowPlayingMovies: [],
     upcomingMovies: [],
-    setTheaters: []
+    setTheaters: [],
+    languages: []
 };
 
 export function moviesReducer(state = initialMovieState, action: MovieActionTypes) {
@@ -59,6 +62,13 @@ export function moviesReducer(state = initialMovieState, action: MovieActionType
             return {
                 ...state,
                 setTheaters: newSetTheatersState
+            };
+        }
+        case EMovieActionTypes.SET_LANGUAGES: {
+            const newLanguages = action.payload;
+            return {
+                ...state,
+                languages: newLanguages[0]
             };
         }
         default:

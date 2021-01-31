@@ -19,8 +19,7 @@ export class AdminService {
 
   newTheater(data: { theaters: Theater[] }) {
     this.http.put(THEATERS_URL, data).subscribe((res: { theaters: Theater[] }) => {
-      console.log(data, res);
-      this.moviesStore.dispatch(new SetTheaters(res));
+      this.moviesStore.dispatch(new SetTheaters(res.theaters));
     }, (e) => console.log(e, 'while updating data'));
   }
 
@@ -29,8 +28,8 @@ export class AdminService {
   }
 
   saveNowPlaying(theatersList) {
-    this.http.put(THEATERS_URL, theatersList).subscribe((res: { theaters: Theater[] }) => {
-      this.moviesStore.dispatch(new SetTheaters(res));
+    this.http.put(THEATERS_URL, {theaters: theatersList}).subscribe((res: { theaters: Theater[] }) => {
+      this.moviesStore.dispatch(new SetTheaters(res.theaters));
     }, err => {
       console.log('failed at put call', err);
     });

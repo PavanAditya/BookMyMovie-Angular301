@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import * as MovieState from '../../reducers/index';
+import { Store } from '@ngrx/store';
+import { SetLanguages } from 'src/app/home/store/actions/home.action';
+import { BASE_URL, JSON_SERVER_URLS, TMDB_URLS } from 'src/app/shared/config';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -737,43 +742,33 @@ export class MovieListService {
     }
   };
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private store: Store<MovieState.State>) {}
 
-  getLanguageList(movieList) {
+  getLanguageList() {
     const languageList = [];
-    const languageObj = {};
-    for (const movie of movieList) {
-      // let found = false;
-      // for (const language of languageList) {
-      //   if (movie.original_language === language.key) {
-      //     found = true;
-      //     break;
-      //   }
-      // }
-      if (languageObj[movie.original_language]) {
-        languageObj[movie.original_language].value.push(movie);
-      } else {
-        languageObj[movie.original_language] = {
-          key: this.isoLangs[movie.original_language].name,
-          code: movie.original_language,
-          value: []
-        };
-        languageObj[movie.original_language].value.push(movie);
-      }
-
-      // if (found === false) {
-      //   const lang = {
-      //     key: movie.original_language,
-      //     name: this.isoLangs[movie.original_language].name
-      //   };
-      //   languageList.push(lang);
-      // }
-    }
-    for (const language in languageObj) {
-      if (languageObj.hasOwnProperty(language)) {
-        languageList.push(languageObj[language]);
-      }
-    }
-    return languageList;
+    // const languageObj = {};
+    // for (const movie of movieList) {
+    //   if (languageObj[movie.original_language]) {
+    //     languageObj[movie.original_language].value.push(movie);
+    //   } else {
+    //     languageObj[movie.original_language] = {
+    //       key: this.isoLangs[movie.original_language].name,
+    //       code: movie.original_language,
+    //       value: []
+    //     };
+    //     languageObj[movie.original_language].value.push(movie);
+    //   }
+    // }
+    // for (const language in languageObj) {
+    //   if (languageObj.hasOwnProperty(language)) {
+    //     languageList.push(languageObj[language]);
+    //   }
+    // }
+    // return languageList;
+    const getLanguagesUrl = BASE_URL.TMDB_API + TMDB_URLS.GET_LANGUAGES + environment.API_KEY;
+    this.httpClient.get(getLanguagesUrl).subscribe(resp => {
+      languageList.push(resp);
+      this.store.dispatch(new SetLanguages(languageList));
+    });
   }
 }

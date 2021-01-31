@@ -5,7 +5,8 @@ export enum EMovieActionTypes {
     SET_NOW_PLAYING_MOVIES = '[ Movie ] Set now playing movies',
     SET_UPCOMING_MOVIES = '[ Movie ] Set up coming movies',
     SET_CAST_AND_CREW = '[ Movie ] Set Credits',
-    SET_THEATERS = '[ Theaters ] Set Theaters'
+    SET_THEATERS = '[ Theaters ] Set Theaters',
+    SET_LANGUAGES = '[ Movie ] Set Languages'
 }
 
 export class SetNowPlayingMovies implements Action {
@@ -29,4 +30,9 @@ export class SetTheaters implements Action {
 
     constructor(public payload: any) {}
 }
-export type MovieActionTypes = SetNowPlayingMovies | SetUpcomingMovies| SetCastAndCrew | SetTheaters;
+
+export class SetLanguages implements Action {
+    readonly type = EMovieActionTypes.SET_LANGUAGES;
+    constructor(public payload: any) {}
+}
+export type MovieActionTypes = SetNowPlayingMovies | SetUpcomingMovies| SetCastAndCrew | SetTheaters | SetLanguages;

@@ -3,6 +3,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ConfirmationModalComponent } from '../confirmation-modal/confirmation-modal.component';
 import { Router } from '@angular/router';
 import { TMDB_URLS } from '../../../config';
+import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-seat-reservation-modal',
   templateUrl: './seat-reservation-modal.component.html',
@@ -16,11 +17,9 @@ export class SeatReservationModalComponent implements OnInit {
   screen;
   time;
 
-  // rows: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
   rows: string[] = ['A', 'B', 'C', 'D'];
   cols: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  // reserved: string[] = ['A2', 'A3', 'F5', 'F1', 'F2','F6', 'F7', 'F8', 'H1', 'H2', 'H3', 'H4'];
   reserved: string[] = ['A2', 'A3', 'B5', 'C1', 'C2', 'D4'];
   selected: string[] = [];
 
@@ -30,14 +29,14 @@ export class SeatReservationModalComponent implements OnInit {
   currency = 'Rs';
   showBook: boolean;
   movieList;
+  bookingTime = new FormControl('10:00');
+
   constructor(
     public dialog: MatDialog,
     private dialogRef: MatDialogRef<SeatReservationModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private router: Router
-  ) {
-    console.log('data---', data);
-  }
+  ) { }
 
   ngOnInit() {
     const authValid = sessionStorage.getItem('authDetails');
@@ -54,7 +53,18 @@ export class SeatReservationModalComponent implements OnInit {
     this.dialogRef.close('Confirm');
     const total: number = this.ticketPrice * this.selected.length + this.convFee;
     const theater = this.screen || '';
-    this.router.navigate(['/payment', this.movieTitle, theater, '10:00', this.selected.join(','), total]);
+    const idNum = Math.floor(1000 + Math.random() * 9000);
+    const bookingDetails = JSON.stringify({
+      bookingId: this.data.theatre.name + idNum,
+      tid: this.data.theatre.tid,
+      tcity: this.data.theatre.city,
+      tname: this.data.theatre.name,
+      mname: this.movieTitle,
+      mtime: this.bookingTime.value,
+      seatNum: this.selected.join(','),
+      price: total
+    });
+    this.router.navigate(['/payment', bookingDetails]);
   }
   onCloseCancel() {
     this.dialogRef.close('Cancel');

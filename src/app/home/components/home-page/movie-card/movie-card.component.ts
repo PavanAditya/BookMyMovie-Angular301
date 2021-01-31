@@ -68,7 +68,7 @@ export class MovieCardComponent implements OnInit, OnChanges {
     const dialogRef = this.dialog.open(SeatReservationModalComponent, {
       width: sessionStorage.getItem('authDetails') ? window.innerWidth + 'px' : 'auto',
       height: sessionStorage.getItem('authDetails') ? '599px' : 'auto',
-      data: { category: this.category },
+      data: { category: this.category, movie: this.movie, theatre: this.selectTheater.value },
       disableClose: true
     });
 

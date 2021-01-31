@@ -13,11 +13,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { PreBookingComponent } from '../shared/components/modals/pre-booking/pre-booking.component';
 import { SharedModule } from '../shared/shared.module';
+import { MyBookingsComponent } from './components/my-bookings/my-bookings.component';
 
 
 
 @NgModule({
-  declarations: [HomePageComponent, HomeComponent, MovieCardComponent],
+  declarations: [HomePageComponent, HomeComponent, MovieCardComponent, MyBookingsComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -30,6 +31,6 @@ import { SharedModule } from '../shared/shared.module';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   exports: [MaterialModule],
-  entryComponents: [SeatReservationModalComponent, ConfirmationModalComponent, PreBookingComponent]
+  entryComponents: [SeatReservationModalComponent, ConfirmationModalComponent, PreBookingComponent, MyBookingsComponent]
 })
 export class HomeModule { }

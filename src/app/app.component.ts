@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
 import { MatSnackBar } from '@angular/material';
 import { UserDetailService } from 'src/app/core/services/userDetails.service';
+import { MovieListService } from './core/movie/movie-list.service';
 
 @Component({
   selector: 'app-root',
@@ -13,9 +14,12 @@ export class AppComponent implements OnInit {
   title = 'book-my-movie';
   constructor(private swUpdate: SwUpdate, private snackBar: MatSnackBar,
     private userDetailsService: UserDetailService,
-    private homeService: HomeService) { }
+    private homeService: HomeService,
+    private movieListService: MovieListService
+    ) { }
 
   ngOnInit() {
+    this.movieListService.getLanguageList();
     if (this.swUpdate.isEnabled) {
       this.swUpdate.available.subscribe(() => {
         const message = 'New version available. Update to new Version ?';

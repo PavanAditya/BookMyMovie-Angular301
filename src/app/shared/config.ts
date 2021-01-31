@@ -2,6 +2,7 @@ export const BASE_URL = {
   TMDB_API: 'https://api.themoviedb.org/'
 };
 export const TMDB_URLS = {
+  GET_LANGUAGES: '3/configuration/languages?',
   GET_CREDITS: '3/movie/',
   NOW_PLAYING_MOVIES: '3/movie/now_playing?',
   UPCOMING_MOVIES: '3/movie/upcoming?',

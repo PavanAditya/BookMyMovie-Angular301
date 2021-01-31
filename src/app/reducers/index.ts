@@ -22,6 +22,7 @@ export const getMovieState = createFeatureSelector<MoviesState>('movies');
 export const nowPlayingMoviesSelector = createSelector(getMovieState, (state: MoviesState) => state.nowPlayingMovies);
 export const upcomingMovieSelector = createSelector(getMovieState, (state: MoviesState) => state.upcomingMovies);
 export const theaterList = createSelector(getMovieState, (state: MoviesState) => state.setTheaters);
+export const languageList = createSelector(getMovieState, (state: MoviesState) => state.languages);
 
 export const getUserState = createFeatureSelector<UserState>('user');
 export const userSelector = createSelector(getUserState, (state: UserState) => state.user);

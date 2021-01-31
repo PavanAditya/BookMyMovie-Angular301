@@ -17,8 +17,9 @@
   </button>
   <mat-menu #user="matMenu" xPosition="before">
     <button *ngIf="!authFlag" mat-menu-item (click)="socialSignIn('google')">Sign in</button>
-    <button *ngIf="authFlag" mat-menu-item (click)="socialSignOut('google')">Sign out</button>
-    <button *ngIf="authFlag" mat-menu-item (click)="loadProfile()">Profile</button>
     <button routerLink="admin" *ngIf="adminFlag" mat-menu-item>Admin</button>
+    <button *ngIf="authFlag" mat-menu-item (click)="loadProfile()">Profile</button>
+    <button *ngIf="authFlag" mat-menu-item (click)="loadBookings()">My Bookings</button>
+    <button *ngIf="authFlag" mat-menu-item (click)="socialSignOut('google')">Sign out</button>
   </mat-menu>
 </div>

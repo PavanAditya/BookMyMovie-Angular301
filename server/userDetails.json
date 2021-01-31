@@ -15,7 +15,8 @@
         "ratings": {
           "movieId": "",
           "rating": ""
-        }
+        },
+        "bookings": []
       },
       {
         "uid": "112011073371985625063",
@@ -31,7 +32,8 @@
         "ratings": {
           "movieId": "",
           "rating": ""
-        }
+        },
+        "bookings": []
       },
       {
         "uid": "103390995664490757194",
@@ -42,36 +44,83 @@
         "preferences": {
           "lang": "en",
           "generes": "12",
-          "theaters": "Sarat"
+          "theaters": "Gopalan Cinemas"
         },
         "ratings": {
           "movieId": "",
           "rating": ""
-        }
+        },
+        "bookings": [
+          {
+            "bookingId": "AMB Cinemas1837",
+            "tid": "3",
+            "tcity": "Hyderabad",
+            "tname": "AMB Cinemas",
+            "mname": "Wonder Woman 1984",
+            "mtime": "10:00",
+            "seatNum": "A1",
+            "price": 150
+          },
+          {
+            "bookingId": "Kapali8260",
+            "tid": "1",
+            "tcity": "Bangalore",
+            "tname": "Kapali",
+            "mname": "Soul",
+            "mtime": "02:30",
+            "seatNum": "A4,B6,C6",
+            "price": 390
+          }
+        ]
       }
     ]
   },
-  "theater": [
-    {
-      "tid": "1",
-      "name": "Kapali",
-      "city": "Bangalore",
-      "gLocation": "test",
-      "capacity": 50,
-      "movies": [
-        210577
-      ]
-    },
-    {
-      "tid": "13",
-      "name": "Varun Inox",
-      "city": "Vizag",
-      "gLocation": "test",
-      "capacity": 60,
-      "movies": [
-        210577,
-        11324
-      ]
-    }
-  ]
+  "theater": {
+    "theaters": [
+      {
+        "tid": "1",
+        "name": "Kapali",
+        "city": "Bangalore",
+        "gLocation": "test",
+        "capacity": 50,
+        "movies": [
+          210577
+        ]
+      },
+      {
+        "tid": "13",
+        "name": "Varun Inox",
+        "city": "Vizag",
+        "gLocation": "test",
+        "capacity": 60,
+        "movies": [
+          210577,
+          11324,
+          27205
+        ]
+      },
+      {
+        "tid": "3",
+        "name": "AMB Cinemas",
+        "city": "Hyderabad",
+        "gLocation": "test",
+        "capacity": 60,
+        "movies": [
+          577922,
+          157336,
+          374720
+        ]
+      },
+      {
+        "tid": "4`",
+        "name": "Gopalan Cinemas",
+        "city": "Bangalore",
+        "gLocation": "test",
+        "capacity": 60,
+        "movies": [
+          157336
+        ]
+      }
+    ]
+  }
 }

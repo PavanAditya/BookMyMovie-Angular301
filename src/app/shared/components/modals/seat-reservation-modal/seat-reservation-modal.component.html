@@ -7,6 +7,15 @@
     <span class="title-header__lbl">Cinema: </span>
     <span class="title-header__title">{{screen}}</span>
   </span>
+  <mat-form-field class="movie-time">
+    <mat-label>Show Time:</mat-label>
+    <mat-select [formControl]="bookingTime">
+      <mat-option value="11:00">Morning Show - 11:00</mat-option>
+      <mat-option value="02:30">Matniee - 02:30</mat-option>
+      <mat-option value="06:30">First Show - 06:30</mat-option>
+      <mat-option value="10:00">Second Show - 10:00</mat-option>
+    </mat-select>
+  </mat-form-field>
   <hr class="space__hr">
   <md-dialog-content>
     <div class="container">
@@ -28,7 +37,8 @@
         <br>
         <!-- Generate the seating grid -->
         <div *ngFor="let row of rows" class="grid__DIV">
-          <span class="seat" *ngFor="let col of cols;index as i;" (click)="seatClicked(row + col)" [ngSwitch]="getStatus(row + col)">
+          <span class="seat" *ngFor="let col of cols;index as i;" (click)="seatClicked(row + col)"
+            [ngSwitch]="getStatus(row + col)">
             <span class="rowSpan">{{row+col}}</span>
             <span>
               <span *ngSwitchCase="'selected'" class="selectedSeat">
@@ -56,8 +66,8 @@
         <br>
         <div class="screen-img screen">
           <!-- <img src="http://placehold.it/350x150" class="screen-image__holder" alt="image caption" /> -->
-          <img src="{{imagesPath}}{{movieList.poster_path}}" class="screen-image__holder" onerror="this.src='/assets/images/noImage.jpg';"
-            alt="movie poster">
+          <img src="{{imagesPath}}{{movieList.poster_path}}" class="screen-image__holder"
+            onerror="this.src='/assets/images/noImage.jpg';" alt="movie poster">
         </div>
       </main>
     </div>

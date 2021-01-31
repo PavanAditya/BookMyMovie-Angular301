@@ -13,7 +13,6 @@ export class MovieRatingComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.movieDescription, 'des');
     for (let i = 0; i <= 4; i++) {
       this.rating = this.movieDescription.vote_average / 2;
     }
