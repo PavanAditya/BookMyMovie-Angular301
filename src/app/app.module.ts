@@ -18,6 +18,8 @@ import { AdminModule } from './admin/admin.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
+import { DeactivateGuardService } from './core/services/deactivate-guard.service';
+import { BookingIncompleteModalComponent } from './shared/components/booking-incomplete-modal/booking-incomplete-modal.component';
 
 @NgModule({
   declarations: [AppComponent, ProfileComponent],
@@ -44,7 +46,12 @@ import { HomeModule } from './home/home.module';
     SharedModule,
     HomeModule
   ],
-  providers: [],
+  providers: [
+    DeactivateGuardService
+  ],
+  entryComponents: [
+    BookingIncompleteModalComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -4,6 +4,7 @@ import { ProfileComponent } from 'src/app/profile/profile.component';
 import { PaymentBookingComponent } from './shared/components/payment-booking/payment-booking.component';
 import { AuthGuard } from './core/auth/service/authguard.service';
 import { MyBookingsComponent } from './home/components/my-bookings/my-bookings.component';
+import { DeactivateGuardService } from './core/services/deactivate-guard.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,7 +16,10 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'bookings', component: MyBookingsComponent, canActivate: [AuthGuard] },
   { path: 'admin', loadChildren: './admin/admin.module#AdminModule' },
-  { path: 'payment/:bookingDetails', component: PaymentBookingComponent, canActivate: [AuthGuard] },
+  {
+    path: 'payment/:bookingDetails', component: PaymentBookingComponent,
+    canActivate: [AuthGuard], canDeactivate: [DeactivateGuardService],
+  },
   { path: '**', redirectTo: '/home' }
 ];
 

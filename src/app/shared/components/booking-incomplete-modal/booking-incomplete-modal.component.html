@@ -1,0 +1,12 @@
+<div mat-dialog-title>
+  <h2 class="text-danger">Movie isn't booked yet! 🙄</h2>
+</div>
+<div mat-dialog-content fxflex="100" fxLayout="column" fxLayoutAlign="center start">
+  <div>Your payment is still <span class="text-danger">Incomplete</span>.</div>
+  <div>Do you really want navigate to another page?</div>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-actions fxflex="100" fxLayout="row wrap" fxLayoutAlign="end start">
+  <button type="button" color="primary" mat-flat-button (click)="no()">No, Stay</button>
+  <button type="button" color="warn" mat-flat-button (click)="yes()" fxFlexOffset="1">Yes, Navigate</button>
+</div>

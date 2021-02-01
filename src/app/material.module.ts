@@ -14,7 +14,8 @@ import {
   MatTableModule,
   MatButtonToggleModule,
   MatTabsModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatDividerModule
 } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { ScrollingModule } from '@angular/cdk/scrolling';
@@ -37,7 +38,8 @@ const materialModules = [
   MatSnackBarModule,
   MatTableModule,
   MatTabsModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatDividerModule
 ];
 
 @NgModule({

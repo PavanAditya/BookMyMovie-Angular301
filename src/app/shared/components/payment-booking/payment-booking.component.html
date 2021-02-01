@@ -1,23 +1,27 @@
-<div fxLayout="column" fxLayoutAlign="center center">
+<div fxLayout="column" fxLayoutAlign="center center" class="payment">
   <h1> Payment</h1>
-  <form class="example-container" role="form">
+  <form class="example-container" role="form" [formGroup]="paymentForm">
     <div>
       <label>Card Holder's Name </label> &nbsp;&nbsp;
       <mat-form-field>
-        <input matInput name="card-holder-name" id="card-holder-name">
+        <input matInput name="card-holder-name" id="card-holder-name" formControlName="name">
+        <mat-error *ngIf="paymentForm.get('name').hasError('required')">Card Holder's name is required</mat-error>
+        <mat-error *ngIf="paymentForm.get('name').hasError('minlength')">Card Holder's name should have a min of 3 characters</mat-error>
       </mat-form-field>
     </div>
     <div>
       <label>Debit/Credit Card Number </label> &nbsp;&nbsp;
       <mat-form-field>
-        <input matInput name="card-number" id="card-number" placeholder="">
+        <input matInput name="card-number" id="card-number" placeholder="" formControlName="number">
+        <mat-error *ngIf="paymentForm.get('number').hasError('required')">Card Number is required</mat-error>
+        <mat-error *ngIf="paymentForm.get('number').hasError('pattern')">Card Number is Invalid. Please enter a valid Card Number (Visa/MasterCard/Amex)</mat-error>
       </mat-form-field>
     </div>
     <div>
       <label>Expiration Date </label> &nbsp;&nbsp;
       <mat-form-field>
-        <mat-select>
-          <mat-option value="option">Month</mat-option>
+        <mat-label>Month</mat-label>
+        <mat-select formControlName="expMonth">
           <mat-option value="01">Jan (01)</mat-option>
           <mat-option value="02">Feb (02)</mat-option>
           <mat-option value="03">Mar (03)</mat-option>
@@ -31,9 +35,11 @@
           <mat-option value="11">Nov (11)</mat-option>
           <mat-option value="12">Dec (12)</mat-option>
         </mat-select>
+        <mat-error *ngIf="paymentForm.get('expMonth').hasError('required')">Select an Expiration Month</mat-error>
       </mat-form-field> &nbsp;&nbsp;
       <mat-form-field>
-        <mat-select required>
+        <mat-label>Year</mat-label>
+        <mat-select required formControlName="expYear">
           <mat-option value="21">2021</mat-option>
           <mat-option value="22">2022</mat-option>
           <mat-option value="23">2023</mat-option>
@@ -43,12 +49,16 @@
           <mat-option value="27">2027</mat-option>
           <mat-option value="28">2028</mat-option>
         </mat-select>
+        <mat-error *ngIf="paymentForm.get('expYear').hasError('required')">Select an Expiration Year</mat-error>
       </mat-form-field>
     </div>
     <div>
       <label>Card CVV </label> &nbsp;&nbsp;
       <mat-form-field>
-        <input matInput name="cvv" id="cvv">
+        <input matInput name="cvv" id="cvv" formControlName="cvv">
+        <mat-error *ngIf="paymentForm.get('cvv').hasError('required')">CVV is required</mat-error>
+        <mat-error *ngIf="paymentForm.get('cvv').hasError('maxlength')">CVV can only have a max of 4 digits</mat-error>
+        <mat-error *ngIf="paymentForm.get('cvv').hasError('pattern')">CVV is Invalid. Please enter a valid CVV</mat-error>
       </mat-form-field>
 
     </div>

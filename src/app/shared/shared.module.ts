@@ -22,6 +22,7 @@ import { SortMoviePipe } from './pipes/sort-movie.pipe';
 import { HomeFilterPipe } from './pipes/home-filter.pipe';
 import { PreBookingComponent } from './components/modals/pre-booking/pre-booking.component';
 import { MovieRatingComponent } from './components/movie-rating/movie-rating.component';
+import { BookingIncompleteModalComponent } from './components/booking-incomplete-modal/booking-incomplete-modal.component';
 @NgModule({
   declarations: [
     MovieBookingComponent,
@@ -32,7 +33,8 @@ import { MovieRatingComponent } from './components/movie-rating/movie-rating.com
     SortMoviePipe,
     HomeFilterPipe,
     PreBookingComponent,
-    MovieRatingComponent
+    MovieRatingComponent,
+    BookingIncompleteModalComponent
   ],
   imports: [
     FormsModule,
