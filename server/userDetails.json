@@ -70,6 +70,26 @@
             "mtime": "02:30",
             "seatNum": "A4,B6,C6",
             "price": 390
+          },
+          {
+            "bookingId": "Kapali6405",
+            "tid": "1",
+            "tcity": "Bangalore",
+            "tname": "Kapali",
+            "mname": "Wonder Woman 1984",
+            "mtime": "06:30",
+            "seatNum": "A1",
+            "price": 150
+          },
+          {
+            "bookingId": "Kapali6916",
+            "tid": "1",
+            "tcity": "Bangalore",
+            "tname": "Kapali",
+            "mname": "Breach",
+            "mtime": "11:00",
+            "seatNum": "A7",
+            "price": 150
           }
         ]
       }

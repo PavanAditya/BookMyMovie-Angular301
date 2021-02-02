@@ -12,7 +12,7 @@
   <div class="dialog-dropdown" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="1%">
     <mat-form-field>
       <select [(ngModel)]="selectedLanguage" matNativeControl placeholder="Language">
-        <option *ngFor='let language of movieObjArray' value="{{language.code}}"> {{language.key}}</option>
+        <option *ngFor='let language of movieObjArray' [value]="language.iso_639_1"> {{language.english_name}}</option>
 
       </select>
     </mat-form-field>
@@ -31,7 +31,7 @@
 <mat-dialog-actions>
 
 
-  <app-s-dialog-cards style="min-height: 100vh; min-width: 95vw" [movieList]="movieObjArray"
+  <app-s-dialog-cards style="min-height: 100vh; min-width: 95vw" [movieList]="moviesList"
     [movieFilter]="movieFilterObj" [languageList]="languageList" [selectedLanguage]="selectedLanguage">
   </app-s-dialog-cards>
 

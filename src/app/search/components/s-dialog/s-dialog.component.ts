@@ -53,7 +53,7 @@ export class SDialogComponent implements OnInit, OnDestroy {
       this.originalMovieList = result;
       this.moviesList = result;
       this.movieListService.getLanguageList();
-      this.store.select(MovieState.theaterList).subscribe(resp => {
+      this.store.select(MovieState.languageList).subscribe(resp => {
         this.movieObjArray = resp;
       });
       // get movies with languages
@@ -62,7 +62,10 @@ export class SDialogComponent implements OnInit, OnDestroy {
     });
 
     // genre list from service
-    this.genresList = this.homeService.getGenres();
+    // this.genresList = this.homeService.getGenres();
+    this.homeService.getGenres().subscribe(resp => {
+      this.genresList = resp['genres'];
+    });
 
     // fetch from api/store
     this.searchField.valueChanges.pipe(debounceTime(400)).subscribe(searchString => {
@@ -70,7 +73,7 @@ export class SDialogComponent implements OnInit, OnDestroy {
         searchList => {
           this.moviesList = searchList.results;
           this.movieListService.getLanguageList();
-          this.store.select(MovieState.theaterList).subscribe(resp => {
+          this.store.select(MovieState.languageList).subscribe(resp => {
             this.movieObjArray = resp;
           });
           // this.movieObjArray = this.segregateMovies.getSortedbyLanguage(this.languageList, this.moviesList);
@@ -78,7 +81,7 @@ export class SDialogComponent implements OnInit, OnDestroy {
         error => {
           this.moviesList = this.searchService.searchMovieFromStore(this.originalMovieList, searchString);
           this.movieListService.getLanguageList();
-          this.store.select(MovieState.theaterList).subscribe(resp => {
+          this.store.select(MovieState.languageList).subscribe(resp => {
             this.movieObjArray = resp;
           });
           // get Languages

@@ -22,6 +22,7 @@ export class PaymentBookingComponent implements OnInit {
 
   bookingDetails;
   currentUserDets;
+  paymentConfirmed = false;
   paymentForm = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
     number: ['', [Validators.required, Validators.pattern(`^(?:4[0-9]{12}(?:[0-9]{3})?)$|^(?:5[1-5][0-9]{14})$|^(?:3[47][0-9]{13})$`)]],
@@ -46,11 +47,12 @@ export class PaymentBookingComponent implements OnInit {
 
   confirmPay(): void {
     this.homeService.addBooking(this.bookingDetails, this.currentUserDets[`id`]);
+    this.paymentConfirmed = true;
     this.openConfirmDialog();
   }
 
   canDeactivate(): Observable<boolean> | boolean {
-    if (this.paymentForm.dirty) {
+    if (this.paymentForm.dirty && !this.paymentConfirmed) {
       const confirmNavigationDialog = this.dialog.open(BookingIncompleteModalComponent, {
         disableClose: true,
         data: '',
@@ -65,11 +67,6 @@ export class PaymentBookingComponent implements OnInit {
       return true;
     }
   }
-
-  confirmBox(): Observable<boolean> {
-    const confirmation = window.confirm('Your form is INCOMPLETE. Are you sure you want to navigate?');
-    return of(confirmation);
-  };
 
   openConfirmDialog() {
     this.dialog.open(ConfirmationModalComponent, {

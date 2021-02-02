@@ -46,7 +46,9 @@ export function userReducer(state = initialUserState, action: UserDetailsActionT
         case UserLogged.SET_USER: {
             let newUserState = { ...state.user };
             newUserState = action.payload;
-            sessionStorage.setItem('authDetails', JSON.stringify(newUserState));
+            if (action.payload) {
+                sessionStorage.setItem('authDetails', JSON.stringify(newUserState));
+            }
             return {
                 ...state,
                 user: newUserState
