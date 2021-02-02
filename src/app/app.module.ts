@@ -37,14 +37,12 @@ import { BookingIncompleteModalComponent } from './shared/components/booking-inc
       maxAge: 25,
       logOnly: environment.production
     }),
-    ServiceWorkerModule.register('/ngsw-worker.js', {
-      enabled: environment.production
-    }),
     MaterialModule,
     CoreModule,
     AdminModule,
     SharedModule,
-    HomeModule
+    HomeModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     DeactivateGuardService
