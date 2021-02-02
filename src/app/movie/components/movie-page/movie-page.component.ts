@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, Input, OnChanges, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Inject, Input, OnChanges, ViewEncapsulation, SimpleChanges } from '@angular/core';
 import { StoreFeatureModule } from '@ngrx/store';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { SeatReservationModalComponent } from '../../../shared/components/modals/seat-reservation-modal/seat-reservation-modal.component';
@@ -35,7 +35,10 @@ export class MoviePageComponent implements OnInit, OnChanges {
   ngOnInit() {
     window.scrollTo(0, 0);
   }
-  ngOnChanges() {
+  ngOnChanges(changes: SimpleChanges) {
+    this.movieDescription = changes.movieDescription ? changes.movieDescription.currentValue : this.movieDescription;
+    this.theaterList = changes.theaterList ? changes.theaterList.currentValue : this.theaterList;
+    this.category = changes.category ? changes.category.currentValue : this.category;
     this.selectTheater = new FormControl();
     this.selectTheater.setValue(this.theaterList[0]);
     this.selectedTheater = this.theaterList[0];
@@ -45,6 +48,7 @@ export class MoviePageComponent implements OnInit, OnChanges {
     this.date.valueChanges.subscribe((value: Date) => {
       this.selectedDate = value.toJSON();
     });
+    console.log(this.movieDescription, 'description');
   }
   checKToDialog() {
     this.category === 'nowPlaying' ? this.openDialog() : this.preBookDialog();

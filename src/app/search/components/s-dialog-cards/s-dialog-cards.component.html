@@ -1,20 +1,20 @@
-<div *ngFor="let movieObj of movieList" style="background-color: #D8D8D8">
+<!-- <div *ngFor="let movieObj of movieList" style="background-color: #D8D8D8">
   <div fxLayout="column" fxLayoutAlign="center stretch" fxLayoutGap="5%">
     <mat-card
       style="background-color:#2e2e2e; color: white"
-      *ngIf="selectedLanguage === movieObj.code && movieObj.value.length > 0"
+      *ngIf="selectedLanguage === movieObj.iso_639_1 && movieObj.value.length > 0"
       #languageCard
       class="search-title"
-      >{{ movieObj.key }}</mat-card
+      >{{ movieObj.english_name }}</mat-card
     >
-  </div>
+  </div> -->
   <div
-    *ngIf="selectedLanguage === movieObj.code && movieObj.value.length > 0"
+    *ngIf="movieList?.length > 0"
     fxLayout="row wrap"
     fxLayoutAlign="center center"
     fxLayoutGap="10%"
   >
-    <div *ngFor="let movie of (movieObj.value | sortMovie: userPreference | homeFilter: movieFilter:'')" class="list">
+    <div *ngFor="let movie of (movieList | sortMovie: userPreference | homeFilter: movieFilter:'')" class="list">
       <mat-card class="item">
         <div>
           <img
@@ -42,4 +42,4 @@
       </mat-card>
     </div>
   </div>
-</div>
+<!-- </div> -->
