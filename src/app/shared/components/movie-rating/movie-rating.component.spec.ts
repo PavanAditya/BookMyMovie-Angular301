@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatCardModule, MatIconModule } from '@angular/material';
+import { StoreModule } from '@ngrx/store';
 
 import { MovieRatingComponent } from './movie-rating.component';
 
@@ -7,7 +9,11 @@ describe('MovieRatingComponent', () => {
   let fixture: ComponentFixture<MovieRatingComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
+    TestBed.configureTestingModule({imports: [
+      MatCardModule,
+      MatIconModule,
+      StoreModule.forRoot({}, {}),
+    ],
       declarations: [ MovieRatingComponent ]
     })
     .compileComponents();

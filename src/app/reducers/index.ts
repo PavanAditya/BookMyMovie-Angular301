@@ -8,9 +8,6 @@ export interface State {
     user: UserState;
 }
 
-// export const initialState: State = {
-//     movies: initialMovieState
-// };
 export const reducers: ActionReducerMap<State> = {
     movies: moviesReducer,
     user: userReducer

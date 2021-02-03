@@ -7,7 +7,7 @@
     "build": "ng build --prod",
     "build:book-my-movie": "ng build --prod --vendor-chunk=true --aot --buildOptimizer",
     "test": "ng test",
-    "test:ci": "ng test --watch=false --codeCoverage=true",
+    "test:ci": "ng test --watch=true --codeCoverage=true",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

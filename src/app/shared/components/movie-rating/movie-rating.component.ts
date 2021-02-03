@@ -13,7 +13,7 @@ export class MovieRatingComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit() {
-    this.rating = this.movieDescription.vote_average / 2;
+    this.rating = this.movieDescription ? this.movieDescription.vote_average / 2 : null;
   }
 
   ngOnChanges(changes: SimpleChanges): void {

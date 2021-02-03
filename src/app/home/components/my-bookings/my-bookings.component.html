@@ -1,4 +1,4 @@
-<div class="bookings" fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center start">
+<div class="bookings" fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center start" *ngIf="userBookings">
   <h1 fxFlex="100" fxLayoutAlign="center start">My Bookings</h1>
   <div fxLayout="row wrap" fxFlex="80" *ngIf="userBookings[0]" fxLayoutAlign="center start">
     <mat-card fxFlex="48" *ngFor="let booking of userBookings">

@@ -39,19 +39,21 @@ export class ChangeShowComponent implements OnInit {
     });
   }
   addMovie(movie) {
-    this.movieInList = false;
-    console.log(this.theaterList.find(el => el.tid === this.selectTheater.value.tid), 'find');
-    if (this.theaterList.find(el => el.tid === this.selectTheater.value.tid)) {
-      const movies = this.theaterList.find(el => el.tid === this.selectTheater.value.tid).movies;
-      this.nowPlaying = movies ? movies : [];
-    }
-    if (this.nowPlaying.indexOf(movie.id) === -1) {
-      this.nowShowing.push(movie.name);
-      this.nowPlaying.push(movie.id);
-    } else {
-      this.movieInList = true;
+    if (this.theaterList) {
+      this.movieInList = false;
+      if (this.theaterList.find(el => el.tid === this.selectTheater.value.tid)) {
+        const movies = this.theaterList.find(el => el.tid === this.selectTheater.value.tid).movies;
+        this.nowPlaying = movies ? movies : [];
+      }
+      if (this.nowPlaying.indexOf(movie.id) === -1) {
+        this.nowShowing.push(movie.name);
+        this.nowPlaying.push(movie.id);
+      } else {
+        this.movieInList = true;
+      }
     }
   }
+
   save() {
     this.matDialog.open(this.successDialog);
     this.theaterList.forEach(theater => {

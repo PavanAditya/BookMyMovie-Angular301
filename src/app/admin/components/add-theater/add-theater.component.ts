@@ -18,7 +18,7 @@ export class AddTheaterComponent implements OnInit {
   });
 
   @Output() addTheater = new EventEmitter();
-  @ViewChild('successDialog') successDialog: TemplateRef<any>;
+  @ViewChild('successDialog', { read: TemplateRef }) successDialog: TemplateRef<any>;
 
   constructor(private fb: FormBuilder, private matDialog: MatDialog) {
   }

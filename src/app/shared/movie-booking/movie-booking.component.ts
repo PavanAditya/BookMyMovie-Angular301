@@ -9,7 +9,6 @@ import { FormControl } from '@angular/forms';
 export class MovieBookingComponent implements OnInit {
   dialogResult;
   @Input() movieId;
-  // dateSelector = new  FormControl(new Date());
   theaters = [{
     'name': 'ABC',
     'location': 'asdas',
