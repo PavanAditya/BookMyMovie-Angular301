@@ -14,7 +14,8 @@ export function getAuthServiceConfigs() {
   const config = new AuthServiceConfig([
     {
       id: GoogleLoginProvider.PROVIDER_ID,
-      provider: new GoogleLoginProvider('211481144823-tvupluah139i5bdcqdpnaeqdmeu9rfbd.apps.googleusercontent.com')
+      // provider: new GoogleLoginProvider('211481144823-tvupluah139i5bdcqdpnaeqdmeu9rfbd.apps.googleusercontent.com')
+      provider: new GoogleLoginProvider('565708617576-32lpmp6g6q8od5ofnjrs69utsovhk8ii.apps.googleusercontent.com')
     }
   ]);
   return config;

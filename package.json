@@ -4,12 +4,13 @@
   "scripts": {
     "backend": "json-server server/userDetails.json --watch",
     "start": "ng serve",
-    "build": "ng build --prod",
+    "build": "ng build --prod && gzipper compress ./dist",
     "build:book-my-movie": "ng build --prod --vendor-chunk=true --aot --buildOptimizer",
     "test": "ng test",
     "test:ci": "ng test --watch=true --codeCoverage=true",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "http-server": "http-server -g -p 8080 -c-1 dist/book-my-movie"
   },
   "husky": {
     "hooks": {
@@ -44,6 +45,7 @@
     "concurrently": "^4.1.0",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
+    "gzipper": "^4.4.0",
     "hammerjs": "^2.0.8",
     "http-server": "^0.12.3",
     "json-server": "^0.14.2",
