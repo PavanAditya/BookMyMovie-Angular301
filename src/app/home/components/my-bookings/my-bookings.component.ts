@@ -17,7 +17,7 @@ export class MyBookingsComponent implements OnInit {
   ngOnInit() {
     this.store.select(UserState.userSelector).subscribe(result => {
       this.userDetails = result;
-      this.userBookings = this.userDetails.bookings;
+      this.userBookings = this.userDetails.bookings.reverse();
     });
   }
 

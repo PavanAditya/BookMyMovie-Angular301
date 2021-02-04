@@ -7,4 +7,5 @@ export interface Bookings {
     mtime: string;
     seatNum: string;
     price: number;
+    createdDatetime: number;
 };

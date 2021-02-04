@@ -34,7 +34,8 @@ export const initialUserState: UserState = {
                 mname: '',
                 mtime: '',
                 seatNum: '',
-                price: 0
+                price: 0,
+                createdDatetime: 0
             }
         ]
     }

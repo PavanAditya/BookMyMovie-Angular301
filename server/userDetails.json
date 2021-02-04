@@ -59,7 +59,8 @@
             "mname": "Wonder Woman 1984",
             "mtime": "10:00",
             "seatNum": "A1",
-            "price": 150
+            "price": 150,
+            "createdDatetime": 1612031400000
           },
           {
             "bookingId": "Kapali8260",
@@ -69,7 +70,8 @@
             "mname": "Soul",
             "mtime": "02:30",
             "seatNum": "A4,B6,C6",
-            "price": 390
+            "price": 390,
+            "createdDatetime": 1612290600000
           },
           {
             "bookingId": "Kapali6405",
@@ -79,7 +81,8 @@
             "mname": "Wonder Woman 1984",
             "mtime": "06:30",
             "seatNum": "A1",
-            "price": 150
+            "price": 150,
+            "createdDatetime": 1612180800000
           },
           {
             "bookingId": "Kapali6916",
@@ -89,7 +92,19 @@
             "mname": "Breach",
             "mtime": "11:00",
             "seatNum": "A7",
-            "price": 150
+            "price": 150,
+            "createdDatetime": 1612277025000
+          },
+          {
+            "bookingId": "Kapali9394",
+            "tid": "1",
+            "tcity": "Bangalore",
+            "tname": "Kapali",
+            "mname": "Wonder Woman 1984",
+            "mtime": "10:00",
+            "seatNum": "A1,B1,B2,C4,C5,B6",
+            "price": 750,
+            "createdDatetime": 1612426988888
           }
         ]
       }
@@ -128,7 +143,8 @@
         "movies": [
           577922,
           157336,
-          374720
+          374720,
+          27205
         ]
       },
       {
@@ -140,6 +156,13 @@
         "movies": [
           157336
         ]
+      },
+      {
+        "tid": "1276",
+        "name": "Inox",
+        "city": "Bangalore",
+        "gLocation": "test",
+        "capacity": 50
       }
     ]
   }

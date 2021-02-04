@@ -46,9 +46,17 @@ export class PaymentBookingComponent implements OnInit {
   }
 
   confirmPay(): void {
-    this.homeService.addBooking(this.bookingDetails, this.currentUserDets[`id`]);
-    this.paymentConfirmed = true;
-    this.openConfirmDialog();
+    if (this.paymentForm.valid) {
+      this.bookingDetails = {
+        ...this.bookingDetails,
+        createdDatetime: (new Date()).getTime()
+      };
+      this.homeService.addBooking(this.bookingDetails, this.currentUserDets[`id`]);
+      this.paymentConfirmed = true;
+      this.openConfirmDialog();
+    } else {
+      this.paymentForm.markAsTouched();
+    }
   }
 
   canDeactivate(): Observable<boolean> | boolean {
