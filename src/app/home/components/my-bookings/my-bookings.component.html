@@ -1,9 +1,9 @@
 <div class="bookings" fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center start" *ngIf="userBookings">
   <h1 fxFlex="100" fxLayoutAlign="center start">My Bookings</h1>
-  <mat-tab-group class="tabsGroup">
+  <mat-tab-group class="tabs-group">
     <mat-tab label="" fxFlex="100">
       <ng-template matTabContent class="movieList" fxFlex="100">
-        <cdk-virtual-scroll-viewport class="virtualScrollContainer" itemSize="200" minBufferPx="600" maxBufferPx="1000"
+        <cdk-virtual-scroll-viewport class="virtual-scroll-container" itemSize="200" minBufferPx="600" maxBufferPx="1000"
           fxFlex="100" fxLayoutAlign="center start">
           <div fxFlex="100" fxLayoutAlign="center start">
             <div fxLayout="row wrap" fxFlex="80" *ngIf="userBookings[0]" class="cards-display">
