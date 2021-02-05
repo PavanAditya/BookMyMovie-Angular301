@@ -11,9 +11,7 @@
       <app-movie-rating [movieDescription]="movieDescription"></app-movie-rating>
     </div>
     <div fxLayout="column" class="rightCol" fxLayoutGap="5%">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d62216.75944509767!2d77.5234913215693!3d12.936781119009453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sgoplan+mall!5e0!3m2!1sen!2sin!4v1544424546453"
-        width="320px" alt="google map"></iframe>
+      <iframe [src]="theatreLocation" width="320px" alt="google map"></iframe>
       <div fxLayout="column" fxLayoutAlign="center center">
         <app-movie-booking>
           <div class="theater-picker">
@@ -23,7 +21,7 @@
               <mat-datepicker #picker1></mat-datepicker>
             </mat-form-field>
             <mat-form-field class="select-theater">
-              <mat-select required [formControl]="selectTheater">
+              <mat-select required [formControl]="selectTheater" (selectionChange)="changeLocation($event.value)">
                 <mat-option *ngFor="let theater of theaterList" [value]="theater">
                   {{theater.name}}
                 </mat-option>

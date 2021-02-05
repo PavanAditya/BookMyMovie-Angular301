@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material';
 // tslint:disable-next-line:max-line-length
 import { SeatReservationModalComponent } from '../../../../shared/components/modals/seat-reservation-modal/seat-reservation-modal.component';
@@ -33,17 +33,21 @@ export class MovieCardComponent implements OnInit, OnChanges {
   selectedTheater;
   selectedTime;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getTheatersScreeningMovie();
+    console.log(this.movie, 'md');
+  }
 
-  ngOnChanges() {
+  ngOnChanges(changes: SimpleChanges) {
     this.selectTheater = new FormControl();
     this.selectTheater.setValue(this.theaterList[0]);
     this.selectedTheater = this.theaterList[0];
     this.selectTheater.valueChanges.subscribe(selectedTheater => {
       this.selectedTheater = selectedTheater;
     });
+    this.theaterList = changes.theaterList.currentValue;
   }
   onValChange(val: string) {
     this.selectedTime = val;
@@ -61,7 +65,7 @@ export class MovieCardComponent implements OnInit, OnChanges {
     const dialogRef = this.dialog.open(PreBookingComponent, {
       disableClose: true
     });
-    dialogRef.afterClosed().subscribe(() => {});
+    dialogRef.afterClosed().subscribe(() => { });
   }
 
   openDialog(): void {
@@ -79,6 +83,19 @@ export class MovieCardComponent implements OnInit, OnChanges {
     bookingInstance.movieList = this.movie;
     dialogRef.afterClosed().subscribe(result => {
     });
+  }
+
+  getTheatersScreeningMovie() {
+    this.theaterList = this.theaterList.filter(theatre => (theatre.movies ? (theatre.movies.indexOf(this.movie.id) > -1) : false));
+    this.selectTheater.setValue(this.theaterList[0] ? this.theaterList[0] : null);
+  }
+
+  theatreDisplay(t1, t2) {
+    if (t1.tid === t2.tid) {
+      return t1.name;
+    } else {
+      return '';
+    }
   }
 
   trackCastandCrew(index, cast) {

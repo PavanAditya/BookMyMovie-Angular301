@@ -8,6 +8,7 @@ import { Store, State } from '@ngrx/store';
 import * as MovieState from '../../../reducers/index';
 import { TMDB_URLS } from '../../../shared/config';
 import { PreBookingComponent } from '../../../shared/components/modals/pre-booking/pre-booking.component';
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-movie-page',
@@ -28,7 +29,11 @@ export class MoviePageComponent implements OnInit, OnChanges {
   selectedDate;
   dialogResult;
   selectedTime;
-  constructor(public dialog: MatDialog) {
+  theatreLocation: SafeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!
+  1d3800.3291268857497!2d83.33770681532448!3d17.7291246975244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395a4003c
+  70bdd%3A0xcbe1c445e33620ff!2sBeach%20Rd%2C%20East%20Point%20Colony%2C%20Pedda%20Waltair%2C%20Visakhapatnam%2C%20Andhra
+  %20Pradesh!5e0!3m2!1sen!2sin!4v1612430917215!5m2!1sen!2sin`);
+  constructor(public dialog: MatDialog, private sanitizer: DomSanitizer) {
     this.selectTheater = new FormControl();
   }
 
@@ -38,6 +43,9 @@ export class MoviePageComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     this.movieDescription = changes.movieDescription ? changes.movieDescription.currentValue : this.movieDescription;
     this.theaterList = changes.theaterList ? changes.theaterList.currentValue : this.theaterList;
+    this.filterTheatresByMovie();
+    this.theatreLocation = this.theaterList[0]
+      ? this.sanitizer.bypassSecurityTrustResourceUrl(this.theaterList[0].gLocation) : this.theatreLocation;
     this.category = changes.category ? changes.category.currentValue : this.category;
     this.selectTheater = new FormControl();
     this.selectTheater.setValue(this.theaterList[0]);
@@ -50,6 +58,9 @@ export class MoviePageComponent implements OnInit, OnChanges {
     });
     console.log(this.movieDescription, 'description');
   }
+  filterTheatresByMovie() {
+    this.theaterList = this.theaterList.filter(theatre => (theatre.movies ? theatre.movies.indexOf(this.movieDescription.id) > -1 : true));
+  }
   checKToDialog() {
     this.category === 'nowPlaying' ? this.openDialog() : this.preBookDialog();
   }
@@ -57,7 +68,7 @@ export class MoviePageComponent implements OnInit, OnChanges {
     const dialogRef = this.dialog.open(PreBookingComponent, {
       disableClose: true
     });
-    dialogRef.afterClosed().subscribe(() => {});
+    dialogRef.afterClosed().subscribe(() => { });
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(SeatReservationModalComponent, {
@@ -90,5 +101,8 @@ export class MoviePageComponent implements OnInit, OnChanges {
     } else {
       return -1;
     }
+  }
+  changeLocation(theatre): void {
+    this.theatreLocation = theatre ? this.sanitizer.bypassSecurityTrustResourceUrl(theatre.gLocation) : this.theatreLocation;
   }
 }

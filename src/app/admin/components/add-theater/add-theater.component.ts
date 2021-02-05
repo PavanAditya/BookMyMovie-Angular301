@@ -27,8 +27,8 @@ export class AddTheaterComponent implements OnInit {
   }
   onSubmit() {
     if (this.newTheater.valid) {
+      this.addTheater.emit({ ...this.newTheater.value, movies: [] });
       this.matDialog.open(this.successDialog);
-      this.addTheater.emit(this.newTheater.value);
     }
   }
   dialogOk() {

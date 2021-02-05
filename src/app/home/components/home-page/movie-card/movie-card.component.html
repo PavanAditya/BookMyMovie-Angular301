@@ -36,7 +36,11 @@
           <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
           <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>
-        <mat-form-field class="theaterList">
+        <mat-form-field class="theaterList" *ngIf="!theaterList[0]">
+          <mat-select disabled placeholder="No Theatres Available">
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="theaterList" *ngIf="theaterList[0]" placeholder="Select Theatre">
           <mat-select required [formControl]="selectTheater">
             <mat-option *ngFor="let theater of theaterList" [value]="theater"> {{ theater.name }} </mat-option>
           </mat-select>
@@ -49,7 +53,7 @@
     <p fxLayoutAlign="center start">
       <app-movie-rating [movieDescription]="movie"></app-movie-rating>
     </p>
-    <button mat-raised-button color="primary" (click)="checKToDialog()" [disabled]="isInvalid()">
+    <button mat-raised-button color="primary" (click)="checKToDialog()" [disabled]="isInvalid() || !theaterList[0]">
       {{ category === 'nowPlaying' ? 'BOOK' : 'PRE-BOOK' }}
     </button>
     <a mat-button class="forwardlink" [routerLink]="['/movie', category, movie.id]"

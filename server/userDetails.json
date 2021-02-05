@@ -57,6 +57,9 @@
             "tcity": "Hyderabad",
             "tname": "AMB Cinemas",
             "mname": "Wonder Woman 1984",
+            "mid": "464052",
+            "mposter": "/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",
+            "gLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.0404635232767!2d78.36111131532225!3d17.45777730536521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb938d99f563cd%3A0x1d711d3f9ea94260!2sAMB!5e0!3m2!1sen!2sin!4v1612434542348!5m2!1sen!2sin",
             "mtime": "10:00",
             "seatNum": "A1",
             "price": 150,
@@ -68,28 +71,37 @@
             "tcity": "Bangalore",
             "tname": "Kapali",
             "mname": "Soul",
+            "mid": "508442",
+            "mposter": "/hm58Jw4Lw8OIeECIq5qyPYhAeRJ.jpg",
+            "gLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9051231788103!2d77.57358781529338!3d12.977919818249838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae161b4dc57b55%3A0xe8143fd9655221f6!2sKapali%20Theatre!5e0!3m2!1sen!2sin!4v1612430174852!5m2!1sen!2sin",
             "mtime": "02:30",
             "seatNum": "A4,B6,C6",
             "price": 390,
             "createdDatetime": 1612290600000
           },
           {
-            "bookingId": "Kapali6405",
-            "tid": "1",
+            "bookingId": "Inox - JP Nagar6405",
+            "tid": "1276",
             "tcity": "Bangalore",
-            "tname": "Kapali",
+            "tname": "Inox - JP Nagar",
             "mname": "Wonder Woman 1984",
+            "mid": "464052",
+            "mposter": "/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",
+            "gLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.8646400353027!2d77.59017531529308!3d12.916420219580282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15993a34ed0f%3A0x2076fd8a42e2790f!2sInox%20Theatre!5e0!3m2!1sen!2sin!4v1612434627489!5m2!1sen!2sin",
             "mtime": "06:30",
             "seatNum": "A1",
             "price": 150,
             "createdDatetime": 1612180800000
           },
           {
-            "bookingId": "Kapali6916",
-            "tid": "1",
-            "tcity": "Bangalore",
-            "tname": "Kapali",
+            "bookingId": "Varun Inox6916",
+            "tid": "13",
+            "tcity": "Vizag",
+            "tname": "Varun Inox",
             "mname": "Breach",
+            "mid": "651571",
+            "mposter": "/13B6onhL6FzSN2KaNeQeMML05pS.jpg",
+            "gLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.7219050158433!2d83.31378291532428!3d17.710592598063442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39436d40fd82b5%3A0x7520b8f4b675fcca!2sVarun%20Inox%2C%20Krishna%20Nagar%2C%20Maharani%20Peta%2C%20Visakhapatnam%2C%20Andhra%20Pradesh%20530002!5e0!3m2!1sen!2sin!4v1612430415235!5m2!1sen!2sin",
             "mtime": "11:00",
             "seatNum": "A7",
             "price": 150,
@@ -101,6 +113,9 @@
             "tcity": "Bangalore",
             "tname": "Kapali",
             "mname": "Wonder Woman 1984",
+            "mid": "464052",
+            "mposter": "/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",
+            "gLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9051231788103!2d77.57358781529338!3d12.977919818249838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae161b4dc57b55%3A0xe8143fd9655221f6!2sKapali%20Theatre!5e0!3m2!1sen!2sin!4v1612430174852!5m2!1sen!2sin",
             "mtime": "10:00",
             "seatNum": "A1,B1,B2,C4,C5,B6",
             "price": 750,
@@ -116,53 +131,72 @@
         "tid": "1",
         "name": "Kapali",
         "city": "Bangalore",
-        "gLocation": "test",
+        "gLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9051231788103!2d77.57358781529338!3d12.977919818249838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae161b4dc57b55%3A0xe8143fd9655221f6!2sKapali%20Theatre!5e0!3m2!1sen!2sin!4v1612430174852!5m2!1sen!2sin",
         "capacity": 50,
         "movies": [
-          210577
+          210577,
+          464052,
+          520946,
+          553604,
+          577922,
+          594718
         ]
       },
       {
         "tid": "13",
         "name": "Varun Inox",
         "city": "Vizag",
-        "gLocation": "test",
+        "gLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.7219050158433!2d83.31378291532428!3d17.710592598063442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39436d40fd82b5%3A0x7520b8f4b675fcca!2sVarun%20Inox%2C%20Krishna%20Nagar%2C%20Maharani%20Peta%2C%20Visakhapatnam%2C%20Andhra%20Pradesh%20530002!5e0!3m2!1sen!2sin!4v1612430415235!5m2!1sen!2sin",
         "capacity": 60,
         "movies": [
           210577,
           11324,
-          27205
+          27205,
+          553604,
+          602269,
+          577922
         ]
       },
       {
         "tid": "3",
         "name": "AMB Cinemas",
         "city": "Hyderabad",
-        "gLocation": "test",
+        "gLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.0404635232767!2d78.36111131532225!3d17.45777730536521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb938d99f563cd%3A0x1d711d3f9ea94260!2sAMB!5e0!3m2!1sen!2sin!4v1612434542348!5m2!1sen!2sin",
         "capacity": 60,
         "movies": [
           577922,
           157336,
           374720,
-          27205
+          27205,
+          464052,
+          553604
         ]
       },
       {
         "tid": "4`",
-        "name": "Gopalan Cinemas",
+        "name": "Gopalan Cinemas - West",
         "city": "Bangalore",
-        "gLocation": "test",
+        "gLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.559718452298!2d77.51558701529315!3d12.935995119157568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15fd0e83f017%3A0x1f1179688042665!2sGopalan%20Arcade%20Mall!5e0!3m2!1sen!2sin!4v1612430504415!5m2!1sen!2sin",
         "capacity": 60,
         "movies": [
-          157336
+          157336,
+          508442,
+          520946,
+          577922,
+          594718
         ]
       },
       {
         "tid": "1276",
-        "name": "Inox",
+        "name": "Inox - JP Nagar",
         "city": "Bangalore",
-        "gLocation": "test",
-        "capacity": 50
+        "gLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.8646400353027!2d77.59017531529308!3d12.916420219580282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15993a34ed0f%3A0x2076fd8a42e2790f!2sInox%20Theatre!5e0!3m2!1sen!2sin!4v1612434627489!5m2!1sen!2sin",
+        "capacity": 50,
+        "movies": [
+          464052,
+          520946,
+          577922
+        ]
       }
     ]
   }

@@ -1,15 +1,65 @@
 .bookings {
     margin-top: 1%;
+    .tabsGroup {
+        margin-top: -5%;
+        width: 100vw;
+    }
+    .virtualScrollContainer {
+        height: 100vh;
+        width: 100vw;
+        margin-bottom: 500px;
+    }
+    .mat-ink-bar {
+        background-color: transparent !important;
+    }
     h1 {
         color: #fafafa;
+        margin: 5% 0;
+    }
+    .cards-display {
+        padding-bottom: 10%;
+    }
+    .movie-title {
         margin-bottom: 3%;
     }
     mat-card {
         background: #505050;
         margin: 1%;
+        padding: 0;
     }
     mat-card-content {
+        overflow: hidden;
         color: white;
         font-size: 15px;
+    }
+    .details-div {
+        margin: 10px 0;
+    }
+    .navigate-div {
+        margin-left: -75px;
+        margin-top: 25px;
+        cursor: pointer;
+        span {
+            font-size: 25px;
+        }
+        a {
+            color: #00d2d2;
+            text-decoration: none;
+        }
+        mat-icon {
+            margin-left: 5px;
+        }
+    }
+    .img-div {
+        height: 350px;
+    }
+}
+
+@media (max-width: 767px) {
+    .details-div {
+        font-size: 12px;
+    }
+    h2 {
+        margin-left: 25px;
     }
 }

@@ -4,6 +4,9 @@ export interface Bookings {
     tcity: string;
     tname: string;
     mname: string;
+    mid: string;
+    mposter: string;
+    gLocation: string;
     mtime: string;
     seatNum: string;
     price: number;
