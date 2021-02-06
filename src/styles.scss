@@ -8,12 +8,59 @@ body {
   background-color: rgb(48, 48, 48);
 }
 
+body,
+mat-card,
+mat-menu,
+mat-tab-label,
+button {
+  // font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-family: 'Titillium Web', sans-serif !important;
+}
 body {
   margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
   font-display: auto;
   overflow-y: hidden;
 }
+
+.mat-tab-label {
+  font-weight: 600 !important;
+}
+
+.mat-ink-bar {
+  background-color: teal !important;
+  height: 4px !important;
+}
+
+.mat-fab.mat-primary,
+.mat-flat-button.mat-primary,
+.mat-mini-fab.mat-primary,
+.mat-raised-button.mat-primary {
+  background: teal;
+}
 .mat-select-value {
   color: #fff !important;
+}
+
+.cdk-virtual-scroll-viewport {
+  height: auto;
+}
+
+.cdk-virtual-scroll-viewport::-webkit-scrollbar {
+  width: 10px;
+  height: 0px;
+  border-radius: 20px;
+}
+.cdk-virtual-scroll-viewport::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+}
+.cdk-virtual-scroll-viewport::-webkit-scrollbar-thumb {
+  background-color: teal;
+  outline: 1px solid teal;
+  width: 9px;
+  border-radius: 20px;
+}
+.cdk-virtual-scroll-viewport::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 20px;
 }

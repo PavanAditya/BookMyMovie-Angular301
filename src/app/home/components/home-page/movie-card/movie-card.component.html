@@ -8,7 +8,9 @@
   </span>
   <mat-card-header class="header">
     <mat-card-title>
-      <div class="hideOverflowText" title="{{ movie.title }}">{{ movie.title }}</div>
+      <div class="hideOverflowText" fxLayoutAlign="center start" title="{{ movie.title }}">
+        <h3>{{ movie.title }}</h3>
+      </div>
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
@@ -45,14 +47,13 @@
             <mat-option *ngFor="let theater of theaterList" [value]="theater"> {{ theater.name }} </mat-option>
           </mat-select>
         </mat-form-field>
-
       </div>
     </app-movie-booking>
-  </mat-card-content>
-  <mat-card-actions class="card-bookbutton-div">
     <p fxLayoutAlign="center start">
       <app-movie-rating [movieDescription]="movie"></app-movie-rating>
     </p>
+  </mat-card-content>
+  <mat-card-actions class="card-bookbutton-div">
     <button mat-raised-button color="primary" (click)="checKToDialog()" [disabled]="isInvalid() || !theaterList[0]">
       {{ category === 'nowPlaying' ? 'BOOK' : 'PRE-BOOK' }}
     </button>

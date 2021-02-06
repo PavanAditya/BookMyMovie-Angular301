@@ -47,7 +47,7 @@ export class MovieCardComponent implements OnInit, OnChanges {
     this.selectTheater.valueChanges.subscribe(selectedTheater => {
       this.selectedTheater = selectedTheater;
     });
-    this.theaterList = changes.theaterList.currentValue;
+    this.theaterList = changes.theaterList ? changes.theaterList.currentValue : this.theaterList;
   }
   onValChange(val: string) {
     this.selectedTime = val;
