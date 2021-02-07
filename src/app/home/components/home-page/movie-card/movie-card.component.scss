@@ -6,6 +6,10 @@
   border-radius: 12px;
 }
 
+.movieCard:hover {
+  box-shadow: 1px 1px 15px 3px #86868686 !important;
+}
+
 .goldColor {
   color: goldenrod;
 }
@@ -91,6 +95,10 @@ img.mat-card-image {
 .theaterList {
   width: 60%;
   margin-left: 10%;
+}
+
+.mat-select-value {
+  color: black !important;
 }
 
 .card-bookbutton-div {

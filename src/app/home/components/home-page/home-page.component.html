@@ -15,7 +15,7 @@
               <ng-container *cdkVirtualFor="
           let movie of (moviesList | sortMovie: userPreference | homeFilter: selectedGenre:selectedLanguage); trackBy:
           trackMovie ">
-                <app-movie-card class=" seach-movies-cards" [movie]="movie" [theaterList]="theaterList" [category]="'nowPlaying'">
+                <app-movie-card class="seach-movies-cards" [movie]="movie" [theaterList]="theaterList" [category]="'nowPlaying'">
                 </app-movie-card>
               </ng-container>
             </div>
