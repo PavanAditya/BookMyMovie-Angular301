@@ -15,7 +15,7 @@
 
 .poster {
   height: 300px;
-  width: 180px;
+  width: 200px;
 }
 
 .centerCol {
@@ -57,15 +57,18 @@
 //     color: red;
 // }
 .mat-card {
-  max-width: 180px;
-  width: 180px;
+  max-width: 200px;
+  width: 200px;
+  height: 300px;
   margin: 10px 0px;
-}
-
-.mat-card {
+  padding: 0 !important;
   img {
-    width: 182px;
-    height: 150px;
+    width: 200px;
+    height: 175px;
+    border: 1px solid black;
+  }
+  mat-card-content {
+    padding: 5px;
   }
 }
 
@@ -97,7 +100,7 @@
   align-items: center;
 }
 
-:host /deep/ .mat-select-value {
+.mat-select-value {
   color: white;
 }
 
