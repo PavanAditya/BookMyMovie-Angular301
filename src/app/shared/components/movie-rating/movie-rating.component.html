@@ -1,7 +1,7 @@
 <div fxLayout="row" class="rating" *ngIf="movieDescription && movieDescription.vote_average">
-  <div class="rate-display" *ngFor="let item of [].constructor(roundedValue(rating))"><mat-icon>star_rate</mat-icon></div>
+  <div class="rate-display" *ngFor="let item of roundedValue(rating)"><mat-icon>star_rate</mat-icon></div>
   <div class="rate-display last" *ngIf="decimalValue(rating)"><mat-icon>star_rate</mat-icon></div>
-  <div class="rate-display grey" *ngFor="let item of [].constructor(5 - ceiledValue(rating))"><mat-icon>star_rate</mat-icon></div>
+  <div class="rate-display grey" *ngFor="let item of ceiledValue(rating)"><mat-icon>star_rate</mat-icon></div>
 </div>
 <div fxLayout="row" class="rating" *ngIf="!(movieDescription && movieDescription.vote_average)">
   No Rating Available

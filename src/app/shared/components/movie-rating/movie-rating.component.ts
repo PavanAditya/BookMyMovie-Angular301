@@ -24,12 +24,12 @@ export class MovieRatingComponent implements OnInit, OnChanges {
     return num - Math.floor(num) !== 0;
   }
 
-  ceiledValue(num: number): number {
-    return Math.ceil(num);
+  ceiledValue(num: number): [] {
+    return [].constructor(5 - Math.ceil(num));
   }
 
-  roundedValue(num: number): number {
-    return Math.floor(num);
+  roundedValue(num: number): [] {
+    return [].constructor(Math.floor(num));
   }
 
 }
