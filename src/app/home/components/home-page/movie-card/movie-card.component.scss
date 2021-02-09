@@ -1,6 +1,6 @@
 .movieCard {
-  max-width: 270px;
-  max-height: 600px;
+  width: 270px;
+  height: 635px;
   background-color: white;
   color: black;
   border-radius: 12px;
@@ -74,7 +74,7 @@
   font-size: 11px;
 }
 
-.mat-card-image {
+.img-div {
   height: 300px;
 }
 
@@ -103,6 +103,15 @@ img.mat-card-image {
 
 .card-bookbutton-div {
   padding: 0;
+  padding-left: 10px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.display-img {
+  margin-bottom: 120px;
 }
 
 .hideOverflowText {

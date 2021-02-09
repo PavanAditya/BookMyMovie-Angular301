@@ -1,11 +1,13 @@
 <mat-card class="movieCard">
-  <span>
+  <div class="display-img">
     <div mat-card-avatar class="example-header-image" title="IMDB rating">
       <h4 class="rating">{{ movie.vote_average * 10 }}%</h4>
     </div>
-    <img mat-card-image src="{{ imagesPath }}{{ movie.poster_path }}" onerror="this.src='/assets/images/noImage.jpg';"
-      alt="poster image" />
-  </span>
+    <div class="img-div">
+      <img mat-card-image src="{{ imagesPath }}{{ movie.poster_path }}" onerror="this.src='/assets/images/noImage.jpg';"
+        alt="poster image" />
+    </div>
+  </div>
   <mat-card-header class="header">
     <mat-card-title>
       <div class="hideOverflowText" fxLayoutAlign="center start" title="{{ movie.title }}">
@@ -14,7 +16,8 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <div class="credits">
+    <!-- ? Casts and Crew display Commented -->
+    <!-- <div class="credits">
       <ng-container *ngFor="let cast of (movie.casts | slice: 1:5); trackBy: trackCastandCrew">
         <span>
           <img src="{{ castCrewPath }}{{ cast.profile_path }}" class="castImage"
@@ -29,6 +32,11 @@
             alt="crew profile photo" />
         </span>
       </ng-container>
+    </div> -->
+    <!-- ? Casts and Crew display Commented -->
+    <hr />
+    <div fxLayoutAlign="center start">
+      <app-movie-rating [movieDescription]="movie"></app-movie-rating>
     </div>
     <hr />
     <app-movie-booking>
@@ -49,9 +57,6 @@
         </mat-form-field>
       </div>
     </app-movie-booking>
-    <p fxLayoutAlign="center start">
-      <app-movie-rating [movieDescription]="movie"></app-movie-rating>
-    </p>
   </mat-card-content>
   <mat-card-actions class="card-bookbutton-div">
     <button mat-raised-button color="primary" (click)="checKToDialog()" [disabled]="isInvalid() || !theaterList[0]">
