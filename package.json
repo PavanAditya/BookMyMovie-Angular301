@@ -5,7 +5,7 @@
     "backend": "json-server server/userDetails.json --watch",
     "start": "ng serve",
     "build": "ng build --prod && gzipper compress ./dist",
-    "build:book-my-movie": "ng build --prod --vendor-chunk=true --aot --buildOptimizer",
+    "build:book-my-movie": "ng build --prod --vendor-chunk=true --aot --buildOptimizer && gzipper compress ./dist",
     "test": "ng test",
     "test:ci": "ng test --watch=true --codeCoverage=true",
     "lint": "ng lint",
