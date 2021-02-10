@@ -50,7 +50,7 @@ export class HeaderComponent implements OnInit {
             if (user.uid === userData.id) {
               this.signUpFlag = true;
               userDetails = {
-                id: userData.id,
+                uid: userData.id,
                 name: userData.name,
                 email: userData.email,
                 image: userData.image,

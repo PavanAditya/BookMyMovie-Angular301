@@ -37,7 +37,6 @@ export class MovieCardComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.getTheatersScreeningMovie();
-    console.log(this.movie, 'md');
   }
 
   ngOnChanges(changes: SimpleChanges) {

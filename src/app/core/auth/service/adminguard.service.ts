@@ -26,7 +26,7 @@ export class AdminguardService implements CanActivate {
       console.log('userDetails auth check', this.userDetails);
     });
     const authValid = this.userDetails;
-    if (authValid && authValid.id !== '' && authValid.role === 'Admin') {
+    if (authValid && authValid.uid !== '' && authValid.role === 'Admin') {
       return true;
     }
     // not logged in so redirect to login page with the return url

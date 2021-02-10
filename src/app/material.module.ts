@@ -15,6 +15,7 @@ import {
   MatButtonToggleModule,
   MatTabsModule,
   MatToolbarModule,
+  MatProgressSpinnerModule,
   MatDividerModule
 } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
@@ -39,7 +40,8 @@ const materialModules = [
   MatTableModule,
   MatTabsModule,
   MatToolbarModule,
-  MatDividerModule
+  MatDividerModule,
+  MatProgressSpinnerModule
 ];
 
 @NgModule({

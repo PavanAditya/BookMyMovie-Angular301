@@ -3,7 +3,7 @@ import { Ratings } from 'src/app/core/models/rating.model';
 import { Bookings } from './Bookings.model';
 
 export interface User {
-    id: string;
+    uid: string;
     name: string;
     email: string;
     image: string;

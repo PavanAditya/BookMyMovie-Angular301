@@ -51,7 +51,8 @@ export class PaymentBookingComponent implements OnInit {
         ...this.bookingDetails,
         createdDatetime: (new Date()).getTime()
       };
-      this.homeService.addBooking(this.bookingDetails, this.currentUserDets[`id`]);
+      this.homeService.addBooking(this.bookingDetails,
+        (this.currentUserDets[`uid`] ? this.currentUserDets[`uid`] : this.currentUserDets[`id`]));
       this.paymentConfirmed = true;
       this.openConfirmDialog();
     } else {

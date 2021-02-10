@@ -25,6 +25,10 @@ export class UserDetailService {
     }
   }
 
+  getMovieBookings() {
+    return this.http.get(USERS_URL);
+  }
+
   addNewUser(data) {
     let newUsers, newObject;
     let currentData;
@@ -38,6 +42,7 @@ export class UserDetailService {
           image: data.image,
           email: data.email,
           role: 'Standard',
+          bookings: [],
           preferences: {
             lang: 'en',
             generes: [],

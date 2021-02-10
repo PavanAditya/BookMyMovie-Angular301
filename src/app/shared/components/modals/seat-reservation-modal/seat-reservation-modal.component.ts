@@ -4,6 +4,7 @@ import { ConfirmationModalComponent } from '../confirmation-modal/confirmation-m
 import { Router } from '@angular/router';
 import { TMDB_URLS } from '../../../config';
 import { FormControl } from '@angular/forms';
+import { UserDetailService } from 'src/app/core/services/userDetails.service';
 @Component({
   selector: 'app-seat-reservation-modal',
   templateUrl: './seat-reservation-modal.component.html',
@@ -29,10 +30,12 @@ export class SeatReservationModalComponent implements OnInit {
   currency = 'Rs';
   showBook: boolean;
   movieList;
-  bookingTime = new FormControl('10:00');
+  bookingTime = new FormControl('10:45');
+  allBookings = null;
 
   constructor(
     public dialog: MatDialog,
+    private userService: UserDetailService,
     private dialogRef: MatDialogRef<SeatReservationModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private router: Router
@@ -45,7 +48,31 @@ export class SeatReservationModalComponent implements OnInit {
     } else {
       this.showBook = false;
     }
+    this.userService.getMovieBookings().subscribe(
+      value => {
+        const newObject = value;
+        this.allBookings = [];
+        newObject['users'].map(user => user['bookings'].length ? this.allBookings.push(...user['bookings']) : this.allBookings.push(...[]));
+        this.seatsBookedForCurrentShow(this.allBookings);
+      });
+    this.bookingTime.valueChanges.subscribe(() => this.seatsBookedForCurrentShow(this.allBookings));
   }
+
+  seatsBookedForCurrentShow(allBookings): void {
+    this.reserved = [];
+    allBookings.map(booking => {
+      if (booking.tid === this.data.theatre.tid && booking.mname === this.movieTitle) {
+        const seats = [];
+        console.log(booking.tid, this.data.theatre.tid, booking.mname, this.movieTitle, booking.mtime, this.bookingTime.value);
+        if (booking.mtime === this.bookingTime.value) {
+          seats.push(...booking.seatNum.split(','));
+        }
+        this.reserved.push(...seats);
+        console.log(this.reserved, 'all');
+      }
+    });
+  }
+
   onNoClick(): void {
     this.dialogRef.close();
   }

@@ -60,7 +60,7 @@
             "mid": "464052",
             "mposter": "/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",
             "gLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.0404635232767!2d78.36111131532225!3d17.45777730536521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb938d99f563cd%3A0x1d711d3f9ea94260!2sAMB!5e0!3m2!1sen!2sin!4v1612434542348!5m2!1sen!2sin",
-            "mtime": "10:00",
+            "mtime": "10:45",
             "seatNum": "A1",
             "price": 150,
             "createdDatetime": 1612031400000
@@ -116,12 +116,114 @@
             "mid": "464052",
             "mposter": "/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",
             "gLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9051231788103!2d77.57358781529338!3d12.977919818249838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae161b4dc57b55%3A0xe8143fd9655221f6!2sKapali%20Theatre!5e0!3m2!1sen!2sin!4v1612430174852!5m2!1sen!2sin",
-            "mtime": "10:00",
+            "mtime": "10:45",
             "seatNum": "A1,B1,B2,C4,C5,B6",
             "price": 750,
             "createdDatetime": 1612426988888
           }
         ]
+      },
+      {
+        "uid": "113506930051719536633",
+        "name": "Bhallala Dhevudu",
+        "image": "https://lh3.googleusercontent.com/a-/AOh14GjtcP8KoKWEYwe7yjNzCTqHJ8prxZAC-EzjSEmQ=s96-c",
+        "email": "bhallaladhevudu@gmail.com",
+        "role": "Standard",
+        "bookings": [
+          {
+            "bookingId": "Kapali7576",
+            "tid": "1",
+            "tcity": "Bangalore",
+            "tname": "Kapali",
+            "mid": 464052,
+            "mposter": "/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",
+            "gLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9051231788103!2d77.57358781529338!3d12.977919818249838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae161b4dc57b55%3A0xe8143fd9655221f6!2sKapali%20Theatre!5e0!3m2!1sen!2sin!4v1612430174852!5m2!1sen!2sin",
+            "mname": "Wonder Woman 1984",
+            "mtime": "06:30",
+            "seatNum": "A1,A2,A3",
+            "price": 390,
+            "createdDatetime": 1612981122686
+          },
+          {
+            "bookingId": "AMB Cinemas3506",
+            "tid": "3",
+            "tcity": "Hyderabad",
+            "tname": "AMB Cinemas",
+            "mid": 553604,
+            "mposter": "/zeD4PabP6099gpE0STWJrJrCBCs.jpg",
+            "gLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.0404635232767!2d78.36111131532225!3d17.45777730536521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb938d99f563cd%3A0x1d711d3f9ea94260!2sAMB!5e0!3m2!1sen!2sin!4v1612434542348!5m2!1sen!2sin",
+            "mname": "Honest Thief",
+            "mtime": "10:45",
+            "seatNum": "A1,A2,B10,B9,C2,C1,D9,C6,D4",
+            "price": 1110,
+            "createdDatetime": 1612981488440
+          },
+          {
+            "bookingId": "Varun Inox1723",
+            "tid": "13",
+            "tcity": "Vizag",
+            "tname": "Varun Inox",
+            "mid": 602269,
+            "mposter": "/c7VlGCCgM9GZivKSzBgzuOVxQn7.jpg",
+            "gLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.7219050158433!2d83.31378291532428!3d17.710592598063442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39436d40fd82b5%3A0x7520b8f4b675fcca!2sVarun%20Inox%2C%20Krishna%20Nagar%2C%20Maharani%20Peta%2C%20Visakhapatnam%2C%20Andhra%20Pradesh%20530002!5e0!3m2!1sen!2sin!4v1612430415235!5m2!1sen!2sin",
+            "mname": "The Little Things",
+            "mtime": "10:45",
+            "seatNum": "B5,B4,B6",
+            "price": 390,
+            "createdDatetime": 1612981729626
+          },
+          {
+            "bookingId": "Varun Inox5934",
+            "tid": "13",
+            "tcity": "Vizag",
+            "tname": "Varun Inox",
+            "mid": 602269,
+            "mposter": "/c7VlGCCgM9GZivKSzBgzuOVxQn7.jpg",
+            "gLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.7219050158433!2d83.31378291532428!3d17.710592598063442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39436d40fd82b5%3A0x7520b8f4b675fcca!2sVarun%20Inox%2C%20Krishna%20Nagar%2C%20Maharani%20Peta%2C%20Visakhapatnam%2C%20Andhra%20Pradesh%20530002!5e0!3m2!1sen!2sin!4v1612430415235!5m2!1sen!2sin",
+            "mname": "The Little Things",
+            "mtime": "02:30",
+            "seatNum": "A2,A9,C5,C4,A10,D8,D7",
+            "price": 870,
+            "createdDatetime": 1612981770448
+          },
+          {
+            "bookingId": "Kapali3961",
+            "tid": "1",
+            "tcity": "Bangalore",
+            "tname": "Kapali",
+            "mid": 520946,
+            "mposter": "/2VrvxK4yxNCU6KVgo5TADJeBEQu.jpg",
+            "gLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9051231788103!2d77.57358781529338!3d12.977919818249838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae161b4dc57b55%3A0xe8143fd9655221f6!2sKapali%20Theatre!5e0!3m2!1sen!2sin!4v1612430174852!5m2!1sen!2sin",
+            "mname": "100% Wolf",
+            "mtime": "10:45",
+            "seatNum": "A1,A2,A3,A4,A5,A7,A6,A8,A9,A10,B5,C5,D5",
+            "price": 1590,
+            "createdDatetime": 1612982052268
+          },
+          {
+            "bookingId": "Gopalan Cinemas - West4836",
+            "tid": "4`",
+            "tcity": "Bangalore",
+            "tname": "Gopalan Cinemas - West",
+            "mid": 520946,
+            "mposter": "/2VrvxK4yxNCU6KVgo5TADJeBEQu.jpg",
+            "gLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.559718452298!2d77.51558701529315!3d12.935995119157568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15fd0e83f017%3A0x1f1179688042665!2sGopalan%20Arcade%20Mall!5e0!3m2!1sen!2sin!4v1612430504415!5m2!1sen!2sin",
+            "mname": "100% Wolf",
+            "mtime": "02:30",
+            "seatNum": "A1,B2,C3,D4,C5,C6,D7,C8,B9,A10,B5,B6",
+            "price": 1470,
+            "createdDatetime": 1612982118538
+          }
+        ],
+        "preferences": {
+          "lang": "en",
+          "generes": [],
+          "theaters": []
+        },
+        "ratings": {
+          "movieId": "",
+          "rating": ""
+        }
       }
     ]
   },
@@ -139,7 +241,8 @@
           520946,
           553604,
           577922,
-          594718
+          594718,
+          508442
         ]
       },
       {

@@ -13,13 +13,13 @@
       <mat-option value="11:00">Morning Show - 11:00</mat-option>
       <mat-option value="02:30">Matniee - 02:30</mat-option>
       <mat-option value="06:30">First Show - 06:30</mat-option>
-      <mat-option value="10:00">Second Show - 10:00</mat-option>
+      <mat-option value="10:45">Second Show - 10:45</mat-option>
     </mat-select>
   </mat-form-field>
   <hr class="space__hr">
   <md-dialog-content>
-    <div class="container">
-      <main class="innerContainer">
+    <div class="container" fxLayoutAlign="center start">
+      <main class="innerContainer" *ngIf="allBookings">
         <!-- Showing a static legend bar -->
         <div class="legend">
           <span class="freeSeat padding-left">
@@ -70,6 +70,9 @@
             onerror="this.src='/assets/images/noImage.jpg';" alt="movie poster">
         </div>
       </main>
+      <div *ngIf="!allBookings" fxFlex="100" fxLayoutAlign="center start">
+        <mat-spinner></mat-spinner>
+      </div>
     </div>
   </md-dialog-content>
 

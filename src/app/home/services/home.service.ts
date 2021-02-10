@@ -118,7 +118,7 @@ export class HomeService {
       console.log(newBooking, currentUserId, res['users']);
       res['users'].forEach(user => {
         if (user.uid === currentUserId) {
-          user.bookings = user.bookings ? [...user.bookings, newBooking] : [newBooking];
+          user['bookings'] = user['bookings'] ? [...user['bookings'], newBooking] : [newBooking];
           currentUserData = user;
         }
       });

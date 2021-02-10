@@ -55,7 +55,7 @@
     <div>
       <label>Card CVV </label> &nbsp;&nbsp;
       <mat-form-field>
-        <input matInput name="cvv" id="cvv" formControlName="cvv">
+        <input matInput name="cvv" id="cvv" formControlName="cvv" type="password">
         <mat-error *ngIf="paymentForm.get('cvv').hasError('required')">CVV is required</mat-error>
         <mat-error *ngIf="paymentForm.get('cvv').hasError('maxlength')">CVV can only have a max of 4 digits</mat-error>
         <mat-error *ngIf="paymentForm.get('cvv').hasError('pattern')">CVV is Invalid. Please enter a valid CVV</mat-error>

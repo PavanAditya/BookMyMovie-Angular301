@@ -31,7 +31,7 @@ export class AuthGuard implements CanActivate, CanLoad {
             console.log('userDetails auth check', this.userDetails);
         });
         const authValid = this.userDetails;
-        if (authValid && authValid.id !== '') {
+        if (authValid && authValid.uid !== '') {
             return true;
         }
         // not logged in so redirect to login page with the return url
