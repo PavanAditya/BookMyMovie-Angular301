@@ -1,6 +1,6 @@
 <div class="mat-elevation-z6 app-navbar" fxLayout="row">
   <nav _ngcontent-c1>
-    <img routerLink="home" src="../../../../assets/images/logo.jpg" class="logo" alt="logo">
+    <img routerLink="home" src="../../../../assets/images/logo.png" class="logo" alt="logo" height="40" width="170">
   </nav>
   <div class="extraSpace"></div>
   <div fxLayout="column" class="searchContainer">
@@ -12,7 +12,7 @@
     <img src="{{userDetails.image}}" class="profileImage" title="{{userDetails.name}}" onerror="this.src='/assets/download.png'" alt="User profile Pic" />
   </span>
   <span *ngIf="!userDetails || userDetails.image === null">
-    <i class="fa fa-user-circle" aria-hidden="true"></i>
+    <mat-icon class="mat-icon-circle">account_circle</mat-icon>
   </span>
   </button>
   <mat-menu #user="matMenu" xPosition="before">

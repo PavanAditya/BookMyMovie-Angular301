@@ -11,6 +11,11 @@
       "src": "assets/images/bookmymovie-logo.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "assets/images/logo.png",
+      "sizes": "1024x512",
+      "type": "image/png"
     }
   ]
 }

@@ -120,6 +120,20 @@
             "seatNum": "A1,B1,B2,C4,C5,B6",
             "price": 750,
             "createdDatetime": 1612426988888
+          },
+          {
+            "bookingId": "Varun Inox6994",
+            "tid": "13",
+            "tcity": "Vizag",
+            "tname": "Varun Inox",
+            "mid": 577922,
+            "mposter": "/k68nPLbIST6NP96JmTxmZijEvCA.jpg",
+            "gLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.7219050158433!2d83.31378291532428!3d17.710592598063442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39436d40fd82b5%3A0x7520b8f4b675fcca!2sVarun%20Inox%2C%20Krishna%20Nagar%2C%20Maharani%20Peta%2C%20Visakhapatnam%2C%20Andhra%20Pradesh%20530002!5e0!3m2!1sen!2sin!4v1612430415235!5m2!1sen!2sin",
+            "mname": "Tenet",
+            "mtime": "10:45",
+            "seatNum": "B1,B2,B3",
+            "price": 390,
+            "createdDatetime": 1613021158720
           }
         ]
       },
@@ -272,7 +286,8 @@
           374720,
           27205,
           464052,
-          553604
+          553604,
+          587496
         ]
       },
       {
@@ -298,7 +313,22 @@
         "movies": [
           464052,
           520946,
-          577922
+          577922,
+          651571,
+          587496
+        ]
+      },
+      {
+        "tid": "1209",
+        "name": "PVR - Forum",
+        "city": "Bangalore",
+        "gLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.874998252727!2d77.69109471529339!3d12.97984601820811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae139fe6c3e805%3A0x3c1cf454b8e87445!2sPVR!5e0!3m2!1sen!2sin!4v1613024813243!5m2!1sen!2sin",
+        "capacity": 60,
+        "movies": [
+          464052,
+          520946,
+          577922,
+          27205
         ]
       }
     ]

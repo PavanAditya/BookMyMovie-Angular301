@@ -39,10 +39,16 @@ mat-placeholder {
 
 .logo {
   align-self: center;
-  height: 30px;
-  width: 80px;
-  margin: 8px;
+  height: 40px !important;
+  width: 140px !important;
+  margin: 8px 0 0 8px;
   cursor: pointer;
+}
+
+.mat-icon-circle {
+  font-size: 40px;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .extraSpace {
